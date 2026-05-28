@@ -2,7 +2,9 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import ROICalculator from "@/components/ROICalculator";
 import MarqueeTicker from "@/components/MarqueeTicker";
-import { Globe, Cpu, Video, TrendingUp, BarChart2, Bot, Code2, ArrowRight } from "lucide-react";
+import TypewriterCycler from "@/components/TypewriterCycler";
+import CountUpStat from "@/components/CountUpStat";
+import { Globe, Cpu, BarChart2, ArrowRight } from "lucide-react";
 
 const fadeUp = {
   hidden: { y: 30, opacity: 0 },
@@ -14,75 +16,69 @@ const stagger = {
   visible: { transition: { staggerChildren: 0.15 } },
 };
 
-const services = [
-  {
-    icon: <Video className="w-6 h-6 text-[#FE5C57]" />,
-    title: "Video Strategy & Content",
-    desc: "Organic distribution engines and thought-leader video architectures engineered for massive B2B and B2C reach.",
-    tags: [{ label: "Strategy", color: "bg-[#321A12]/5 text-[#321A12]" }, { label: "Editing", color: "bg-[#321A12]/5 text-[#321A12]" }],
-  },
-  {
-    icon: <TrendingUp className="w-6 h-6 text-[#02E5D2]" />,
-    title: "Digital Marketing",
-    desc: "Organic growth through technical SEO and inorganic performance via Google, Meta, and TikTok paid campaigns — managed end-to-end.",
-    tags: [{ label: "SEO", color: "bg-[#02E5D2]/15 text-[#02E5D2]" }, { label: "Paid Ads", color: "bg-[#02E5D2]/15 text-[#02E5D2]" }],
-  },
-  {
-    icon: <Bot className="w-6 h-6 text-[#FE5C57]" />,
-    title: "AI Voice Automation",
-    desc: "Low-latency conversational AI agents tied to Make/Zapier and your CRM for 24/7 inbound and outbound workflows.",
-    tags: [{ label: "Voice AI", color: "bg-[#FE5C57]/10 text-[#FE5C57]" }, { label: "Automations", color: "bg-[#FE5C57]/10 text-[#FE5C57]" }],
-  },
-  {
-    icon: <Code2 className="w-6 h-6 text-[#321A12]" />,
-    title: "No-Code & Web Development",
-    desc: "From high-converting marketing sites to advanced SaaS platforms and cross-platform mobile apps — built fast, built to scale.",
-    tags: [{ label: "Web Apps", color: "bg-[#321A12]/5 text-[#321A12]" }, { label: "SaaS", color: "bg-[#321A12]/5 text-[#321A12]" }, { label: "Mobile", color: "bg-[#321A12]/5 text-[#321A12]" }],
-  },
-];
-
 const stats = [
-  { number: "4.2M+", label: "Organic reach generated" },
-  { number: "340%", label: "Avg. enquiry increase for clients" },
-  { number: "68%", label: "Reduction in manual overhead via AI" },
-  { number: "5", label: "International markets served" },
+  { value: "4.2M+", label: "Organic reach generated" },
+  { value: "340%", label: "Avg. enquiry increase for clients" },
+  { value: "68%", label: "Reduction in manual overhead via AI" },
+  { value: "5+", label: "International markets served" },
 ];
 
 export default function Home() {
   return (
-    <div className="flex flex-col">
-      {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex flex-col justify-center items-center text-center overflow-hidden pt-20 pb-32 px-4 md:px-8">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#02E5D2]/15 rounded-full blur-3xl -z-10" />
-        <div className="absolute bottom-1/4 right-1/4 w-[30rem] h-[30rem] bg-[#FE5C57]/10 rounded-full blur-3xl -z-10" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40rem] h-[40rem] bg-white/60 rounded-full blur-3xl -z-10" />
+    <div className="flex flex-col w-full">
+
+      {/* ── Hero ─────────────────────────────────────────────── */}
+      <section className="relative min-h-[92vh] flex flex-col justify-center items-center text-center overflow-hidden px-6 pb-20 pt-10">
+        <div className="absolute top-1/4 left-1/5 w-[500px] h-[500px] bg-[#02E5D2]/15 rounded-full blur-3xl -z-10 pointer-events-none" />
+        <div className="absolute bottom-1/4 right-1/5 w-[500px] h-[500px] bg-[#FE5C57]/10 rounded-full blur-3xl -z-10 pointer-events-none" />
 
         <motion.div
-          className="max-w-5xl z-10"
+          className="max-w-5xl z-10 w-full"
           initial="hidden"
           animate="visible"
           variants={stagger}
         >
-          <motion.div variants={fadeUp} className="inline-flex items-center gap-2 glass-card px-4 py-2 rounded-full mb-8 text-xs font-bold tracking-widest uppercase text-[#321A12]/60">
-            <span className="w-2 h-2 rounded-full bg-gradient-to-r from-[#FE5C57] to-[#02E5D2] inline-block" />
+          {/* location pill */}
+          <motion.div
+            variants={fadeUp}
+            className="inline-flex items-center gap-2 glass-card px-4 py-2 rounded-full mb-10 text-xs font-bold tracking-widest uppercase text-[#321A12]/50"
+          >
+            <span className="w-2 h-2 rounded-full bg-gradient-to-r from-[#FE5C57] to-[#02E5D2] inline-block shrink-0" />
             Lahore · London · Dubai · New York · Sydney
           </motion.div>
 
+          {/* headline line 1 — static */}
           <motion.h1
-            className="text-6xl md:text-8xl font-serif font-bold text-[#321A12] leading-[1.0] mb-8 tracking-tight"
             variants={fadeUp}
+            className="text-6xl sm:text-7xl md:text-8xl font-serif font-bold text-[#321A12] leading-[1.0] tracking-tight mb-2"
           >
-            Complexity<br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FE5C57] to-[#02E5D2]">
-              Mastered at Scale.
-            </span>
+            Complexity
           </motion.h1>
 
+          {/* headline line 2 — typewriter cycling */}
+          <motion.div variants={fadeUp} className="mb-10 min-h-[1.1em]">
+            <TypewriterCycler
+              phrases={[
+                "Mastered at Scale.",
+                "Redefined by AI.",
+                "Built for Global Brands.",
+                "Driven by Data.",
+                "Delivered with Precision.",
+              ]}
+              typingSpeed={55}
+              deletingSpeed={30}
+              pauseMs={2400}
+              className="text-6xl sm:text-7xl md:text-8xl font-serif font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#FE5C57] to-[#02E5D2] leading-[1.1] tracking-tight"
+            />
+          </motion.div>
+
           <motion.p
-            className="text-xl md:text-2xl text-[#321A12]/70 mb-12 max-w-2xl mx-auto font-light leading-relaxed"
             variants={fadeUp}
+            className="text-xl md:text-2xl text-[#321A12]/65 mb-12 max-w-2xl mx-auto font-light leading-relaxed"
           >
-            The practitioner-led digital agency uniting elite video strategy, digital marketing, no-code development, and AI voice automation for global brands.
+            The practitioner-led digital agency uniting elite video strategy,{" "}
+            <span className="text-[#321A12]/90 font-medium">digital marketing</span>,
+            no-code development, and AI voice automation for global brands.
           </motion.p>
 
           <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -104,31 +100,20 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* Marquee Ticker */}
-      <div className="-mx-4 md:-mx-8">
-        <MarqueeTicker />
-      </div>
+      {/* ── Marquee ──────────────────────────────────────────── */}
+      <MarqueeTicker />
 
-      {/* Stats Strip */}
-      <section className="py-20 px-4 md:px-8 max-w-7xl mx-auto w-full">
-        <motion.div
-          className="grid grid-cols-2 lg:grid-cols-4 gap-6"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={stagger}
-        >
+      {/* ── Stats ────────────────────────────────────────────── */}
+      <section className="py-20 px-6 md:px-16 max-w-7xl mx-auto w-full">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
           {stats.map((s) => (
-            <motion.div key={s.number} variants={fadeUp} className="glass-card p-8 rounded-3xl text-center">
-              <div className="text-4xl md:text-5xl font-serif font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#FE5C57] to-[#02E5D2] mb-2">{s.number}</div>
-              <div className="text-sm text-[#321A12]/60 font-medium">{s.label}</div>
-            </motion.div>
+            <CountUpStat key={s.value} value={s.value} label={s.label} />
           ))}
-        </motion.div>
+        </div>
       </section>
 
-      {/* USP Section */}
-      <section className="py-20 px-4 md:px-8 max-w-7xl mx-auto w-full">
+      {/* ── USP ──────────────────────────────────────────────── */}
+      <section className="py-20 px-6 md:px-16 max-w-7xl mx-auto w-full">
         <motion.div
           className="text-center mb-16"
           initial="hidden"
@@ -153,12 +138,24 @@ export default function Home() {
           variants={stagger}
         >
           {[
-            { icon: <Cpu className="w-8 h-8 text-[#FE5C57]" />, title: "Practitioner-Led Execution", body: "No outsourcing bottlenecks. Direct access to experts building your solutions with precision and accountability on every engagement." },
-            { icon: <Globe className="w-8 h-8 text-[#02E5D2]" />, title: "Global Footprint", body: "Headquartered in Lahore, seamlessly serving enterprise clients across the UK, USA, UAE, and Australia with cultural and market fluency." },
-            { icon: <BarChart2 className="w-8 h-8 text-[#321A12]" />, title: "Full-Stack Convergence", body: "Video, digital marketing, web apps, and AI automation integrated under one roof — each discipline amplifying the others." },
+            {
+              icon: <Cpu className="w-8 h-8 text-[#FE5C57]" />,
+              title: "Practitioner-Led Execution",
+              body: "No outsourcing bottlenecks. Direct access to experts building your solutions with precision and accountability on every engagement.",
+            },
+            {
+              icon: <Globe className="w-8 h-8 text-[#02E5D2]" />,
+              title: "Global Footprint",
+              body: "Headquartered in Lahore, seamlessly serving enterprise clients across the UK, USA, UAE, and Australia with cultural and market fluency.",
+            },
+            {
+              icon: <BarChart2 className="w-8 h-8 text-[#321A12]" />,
+              title: "Full-Stack Convergence",
+              body: "Video, digital marketing, web apps, and AI automation integrated under one roof — each discipline amplifying the others.",
+            },
           ].map((card) => (
             <motion.div key={card.title} variants={fadeUp} className="glass-card p-10 rounded-3xl flex flex-col items-center text-center group">
-              <div className="w-16 h-16 bg-[#321A12]/5 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <div className="w-16 h-16 bg-[#321A12]/5 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 {card.icon}
               </div>
               <h3 className="text-xl font-bold text-[#321A12] mb-4">{card.title}</h3>
@@ -168,47 +165,45 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* Dark Statement Section */}
-      <div className="-mx-4 md:-mx-8 bg-[#321A12] py-24 px-4 md:px-8">
+      {/* ── Dark Statement ───────────────────────────────────── */}
+      <div className="w-full bg-[#321A12] py-24 px-6 md:px-16">
         <motion.div
-          className="max-w-7xl mx-auto"
+          className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={stagger}
         >
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <motion.div variants={fadeUp}>
-              <span className="text-xs font-bold tracking-[0.25em] uppercase text-[#02E5D2] mb-4 block">The Marcoir Thesis</span>
-              <h2 className="text-4xl md:text-6xl font-serif font-bold text-white leading-tight mb-8">
-                Story meets <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FE5C57] to-[#02E5D2]">Systems.</span>
-              </h2>
-              <p className="text-white/60 text-lg leading-relaxed max-w-lg">
-                Most agencies pick one lane. We operate across five — because the brands growing fastest are those where world-class content, sharp paid strategy, and AI-powered automation work as one unified engine.
-              </p>
-            </motion.div>
-            <motion.div variants={fadeUp} className="grid grid-cols-2 gap-4">
-              {[
-                { label: "Video & Content", sub: "Organic distribution engines" },
-                { label: "Digital Marketing", sub: "SEO · Google · Meta · TikTok" },
-                { label: "Web & SaaS", sub: "No-code development" },
-                { label: "AI Automation", sub: "Voice agents & workflows" },
-                { label: "Mobile Apps", sub: "Cross-platform native" },
-                { label: "CRM Integration", sub: "End-to-end data sync" },
-              ].map((item) => (
-                <div key={item.label} className="bg-white/5 border border-white/10 rounded-2xl p-5 hover:bg-white/10 transition-colors">
-                  <div className="font-semibold text-white text-sm mb-1">{item.label}</div>
-                  <div className="text-white/40 text-xs">{item.sub}</div>
-                </div>
-              ))}
-            </motion.div>
-          </div>
+          <motion.div variants={fadeUp}>
+            <span className="text-xs font-bold tracking-[0.25em] uppercase text-[#02E5D2] mb-4 block">The Marcoir Thesis</span>
+            <h2 className="text-4xl md:text-6xl font-serif font-bold text-white leading-tight mb-8">
+              Story meets <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FE5C57] to-[#02E5D2]">Systems.</span>
+            </h2>
+            <p className="text-white/60 text-lg leading-relaxed max-w-lg">
+              Most agencies pick one lane. We operate across five — because the brands growing fastest are those where world-class content, sharp paid strategy, and AI-powered automation work as one unified engine.
+            </p>
+          </motion.div>
+          <motion.div variants={fadeUp} className="grid grid-cols-2 gap-4">
+            {[
+              { label: "Video & Content", sub: "Organic distribution engines" },
+              { label: "Digital Marketing", sub: "SEO · Google · Meta · TikTok" },
+              { label: "Web & SaaS", sub: "No-code development" },
+              { label: "AI Automation", sub: "Voice agents & workflows" },
+              { label: "Mobile Apps", sub: "Cross-platform native" },
+              { label: "CRM Integration", sub: "End-to-end data sync" },
+            ].map((item) => (
+              <div key={item.label} className="bg-white/5 border border-white/10 rounded-2xl p-5 hover:bg-white/10 transition-colors">
+                <div className="font-semibold text-white text-sm mb-1">{item.label}</div>
+                <div className="text-white/40 text-xs">{item.sub}</div>
+              </div>
+            ))}
+          </motion.div>
         </motion.div>
       </div>
 
-      {/* Services Overview */}
-      <section className="py-24 px-4 md:px-8 max-w-7xl mx-auto w-full">
+      {/* ── Services Overview ────────────────────────────────── */}
+      <section className="py-24 px-6 md:px-16 max-w-7xl mx-auto w-full">
         <motion.div
           className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8"
           initial="hidden"
@@ -235,16 +230,39 @@ export default function Home() {
           viewport={{ once: true }}
           variants={stagger}
         >
-          {services.map((s) => (
-            <motion.div key={s.title} variants={fadeUp} className="glass-panel p-10 rounded-3xl hover:scale-[1.01] transition-transform">
-              <div className="w-12 h-12 bg-[#321A12]/5 rounded-xl flex items-center justify-center mb-6">
-                {s.icon}
-              </div>
+          {[
+            {
+              icon: "🎬",
+              title: "Video Strategy & Content",
+              desc: "Organic distribution engines and thought-leader video architectures engineered for massive B2B and B2C reach.",
+              tags: [{ label: "Strategy", cls: "bg-[#321A12]/5 text-[#321A12]" }, { label: "Editing", cls: "bg-[#321A12]/5 text-[#321A12]" }],
+            },
+            {
+              icon: "📈",
+              title: "Digital Marketing",
+              desc: "Organic growth through technical SEO and inorganic performance via Google, Meta, and TikTok paid campaigns — managed end-to-end.",
+              tags: [{ label: "SEO", cls: "bg-[#02E5D2]/15 text-[#02E5D2]" }, { label: "Google Ads", cls: "bg-[#02E5D2]/15 text-[#02E5D2]" }, { label: "TikTok Ads", cls: "bg-[#02E5D2]/15 text-[#02E5D2]" }],
+            },
+            {
+              icon: "🤖",
+              title: "AI Voice Automation",
+              desc: "Low-latency conversational AI agents tied to Make/Zapier and your CRM for 24/7 inbound and outbound workflows.",
+              tags: [{ label: "Voice AI", cls: "bg-[#FE5C57]/10 text-[#FE5C57]" }, { label: "Automations", cls: "bg-[#FE5C57]/10 text-[#FE5C57]" }],
+            },
+            {
+              icon: "💻",
+              title: "No-Code & Web Development",
+              desc: "From high-converting marketing sites to advanced SaaS platforms and cross-platform mobile apps — built fast, built to scale.",
+              tags: [{ label: "Web Apps", cls: "bg-[#321A12]/5 text-[#321A12]" }, { label: "SaaS", cls: "bg-[#321A12]/5 text-[#321A12]" }, { label: "Mobile", cls: "bg-[#321A12]/5 text-[#321A12]" }],
+            },
+          ].map((s) => (
+            <motion.div key={s.title} variants={fadeUp} className="glass-panel p-10 rounded-3xl hover:scale-[1.01] transition-transform duration-300">
+              <div className="text-3xl mb-5">{s.icon}</div>
               <h3 className="text-2xl font-bold text-[#321A12] mb-3">{s.title}</h3>
               <p className="text-[#321A12]/70 mb-6 leading-relaxed">{s.desc}</p>
               <div className="flex flex-wrap gap-2">
                 {s.tags.map((t) => (
-                  <span key={t.label} className={`text-xs font-semibold px-3 py-1 rounded-full ${t.color}`}>{t.label}</span>
+                  <span key={t.label} className={`text-xs font-semibold px-3 py-1 rounded-full ${t.cls}`}>{t.label}</span>
                 ))}
               </div>
             </motion.div>
@@ -252,13 +270,13 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* ROI Calculator */}
-      <section className="py-12 px-4 md:px-8 max-w-7xl mx-auto w-full">
+      {/* ── ROI Calculator ───────────────────────────────────── */}
+      <section className="py-12 px-6 md:px-16 max-w-7xl mx-auto w-full">
         <ROICalculator />
       </section>
 
-      {/* CTA Section */}
-      <div className="-mx-4 md:-mx-8 bg-gradient-to-r from-[#FE5C57] to-[#02E5D2] py-24 px-4 md:px-8">
+      {/* ── Bottom CTA band ──────────────────────────────────── */}
+      <div className="w-full bg-gradient-to-r from-[#FE5C57] to-[#02E5D2] py-24 px-6">
         <motion.div
           className="max-w-3xl mx-auto text-center"
           initial="hidden"
@@ -275,7 +293,7 @@ export default function Home() {
           <motion.div variants={fadeUp}>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 bg-white text-[#321A12] px-12 py-5 rounded-full text-xl font-semibold transition-all shadow-2xl hover:-translate-y-1 hover:shadow-white/30"
+              className="inline-flex items-center gap-2 bg-white text-[#321A12] px-12 py-5 rounded-full text-xl font-semibold transition-all shadow-2xl hover:-translate-y-1"
               data-testid="link-bottom-cta"
             >
               Start the Conversation <ArrowRight className="w-5 h-5" />
@@ -283,6 +301,7 @@ export default function Home() {
           </motion.div>
         </motion.div>
       </div>
+
     </div>
   );
 }

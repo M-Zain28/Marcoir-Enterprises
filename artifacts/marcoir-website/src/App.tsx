@@ -17,7 +17,7 @@ function Router() {
   return (
     <div className="flex flex-col min-h-[100dvh] w-full">
       <Navbar />
-      <main className="flex-1 w-full pt-24 pb-16 px-4 md:px-8 max-w-7xl mx-auto">
+      <main className="flex-1 w-full pt-24 overflow-x-hidden">
         <Switch>
           <Route path="/" component={Home} />
           <Route path="/services" component={Services} />
