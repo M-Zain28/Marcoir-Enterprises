@@ -1,0 +1,55 @@
+Act as an expert Senior Frontend Developer and UI/UX Designer. Build a premium, high-end, multi-page professional agency website for "Marcoir Enterprises", a full-stack Digital Transformation and Content Strategy Agency based in Lahore, Pakistan, serving domestic and international markets (UK, USA, UAE, Australia). 
+
+### 🛠️ TECH STACK REQUIREMENTS
+- Framework: React (Vite or Next.js setup, use React Router for navigation)
+- Styling: Tailwind CSS (Strict clean layout, mobile-first responsive)
+- Icons: Lucide React (or equivalent clean line icon pack)
+
+### 🎨 BRANDING, VISUAL AESTHETIC & PALETTE
+Apply a premium, ultra-modern visual layout inspired by Apple’s high-end, liquid-glass digital interfaces:
+- Base Canvas: Pure White (#FFFFFF) background across the entire site. Use ample white space and razor-sharp structural grids to maintain museum-grade elegance.
+- Accent Palette: Deep Espresso (#321A12) for primary text/borders, Coral Red (#FE5C57) for energetic CTAs/highlights, and Teal (#02E5D2) for advanced tech/AI accents.
+- Liquid-Glass UI Effect: Component cards, navbar, overlays, and interactive sections must utilize a premium "liquid glass" visual style. Implement this using Tailwind's backdrop-blur (e.g., `backdrop-blur-md`), highly subtle semi-transparent borders, glossy reflective surface treatments, and soft, deep depth-shadows to emulate physical, smooth structural glass floating seamlessly on a clean white background.
+- Language & Tone: 100% English. Completely focus on the corporate entity (no personal branding).
+
+### 📄 PAGES TO IMPLEMENT
+
+1. HOME PAGE (`/`):
+   - Hero Section: Striking, minimalist layout focusing on driving traffic (SEO/Social) and instantly operationalizing backends with AI. Bold typography, high-end white canvas, floating glass graphic accents, and a primary Coral Red CTA ("Book a Consultation").
+   - USP Section: Showcase 3 core values: 1) Practitioner-led execution (no outsourcing bottlenecks), 2) Global footprint (UK, USA, UAE, AU, PK execution), and 3) Full-stack convergence (Media + Web Apps + AI under one roof).
+   - Core Services Overview: Liquid-glass layout grid displaying brief overviews of Video Strategy, No-Code Apps/SaaS, and AI Voice Automation.
+   - Dynamic CTA footer driving to the Consultation booking page.
+
+2. SERVICES PAGE (`/services`):
+   - Deep-dive sections for your premium capabilities. Use clean typography and semantic layout grids structured with glassmorphic cards:
+     * Video Editing & Content Strategy: Organic distribution engines, expert/thought-leader video architectures with high reach, engineered for B2B & B2C.
+     * No-Code & AI-Powered Web Dev: High-converting sites (Framer/Webflow style execution) and advanced web applications / SaaS platforms (Bubble/Xano architectures).
+     * Mobile App Development: Cross-platform native apps (FlutterFlow/Glide execution).
+     * AI Voice Agents & Workflow Automation: Low-latency inbound/outbound conversational engines (clinical receptionists, sales/booking, support) tied directly to automated workflows (Make/Zapier) syncing with core CRMs.
+
+3. INTERACTIVE TOOL (Embedded in Services or Home Page):
+   - "Automation & AI ROI Calculator": A sleek, premium glass-surfaced React component. 
+   - Inputs: A styled custom slider for "Current Manual Hours Spent per Week on Calls/Admin" (range: 10 - 100 hours) and a slider for "Average Staff Hourly Rate ($)" (range: $15 - $100).
+   - Outputs: Dynamically calculate and display "Estimated Weekly Savings ($)" and "Monthly Hours Reclaimed" using realistic scaling math. Highlight these values with a clean Teal glass finish to show technical depth.
+
+4. ABOUT PAGE (`/about`):
+   - Write a polished corporate narrative detailing Marcoir Enterprises' mission. Emphasize how the agency bridges the gap between creative storytelling (high-retention video assets) and modern software/AI automation infrastructure. Mention the strategic dual-founding expertise: premium digital marketing and elite international video strategy/editing.
+
+5. PORTFOLIO PAGE (`/portfolio`):
+   - A museum-grade project showcase grid utilizing glossy, floating image/text cards. Include realistic mock case studies detailing what was achieved:
+     * Project 1: Thought-Leadership Video Campaign (Built massive organic reach and B2B client acquisition pipeline via short-form video masterclass layouts).
+     * Project 2: International Real Estate Modern Transformation Showcase (Premium, high-retention cinematic digital asset campaign maximizing conversion).
+     * Project 3: Healthcare AI Receptionist & Web Portal (Custom web app architecture paired with an autonomous voice agent, dropping call handling overhead significantly).
+   - Include a clear external link/anchor pointing to the Instagram portfolio (@marcoirenterprises).
+
+6. CONTACT & DEMO PAGE (`/contact`):
+   - A beautiful custom lead-capture form built into a liquid-glass enclosure block. 
+   - Inputs to build: Full Name, Company Name, Email Address, Service of Interest (Dropdown: Video Strategy, SaaS/Web Apps, AI Calling Agents, Full Automation Suite), and Project Budget Bracket. 
+   - Ensure form submission runs smooth frontend validation and displays a beautiful "Success" notification state.
+
+### 📐 APP ARCHITECTURE REQUIREMENTS
+- Build a global responsive `<Navbar />` designed as a floating, glassmorphic capsule that stays pinned at the top with gorgeous backdrop filtering over the content as you scroll.
+- Build a unified, high-end `<Footer />` featuring company nomenclature, target market tags, quick links, and a clear social link to Instagram.
+- Ensure all route transitions are fast and smooth. Use beautiful Tailwind layout patterns with custom spacing classes to ensure the site feels spacious, premium, and professional. 
+
+Begin generating the codebase starting with the configuration file, layout structure, and page component files. Write out all content fully without putting generic placeholders.
