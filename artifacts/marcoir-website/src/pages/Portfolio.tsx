@@ -49,195 +49,369 @@ function PhoneFrame({ children }: { children: React.ReactNode }) {
   );
 }
 
-/* ══════════════ WEB MOCKUPS ══════════════ */
+/* ══════════════ WEB MOCKUPS (real client sites) ══════════════ */
 
-function AutoMockup() {
+/* RC Security Group — rcsecuritygroup.com.au
+   Dark/black theme, teal CTA, Bebas Neue headings, Brisbane AU */
+function RCSecurityMockup() {
   return (
-    <BrowserFrame url="malleeautos.com.au">
-      <div className="h-full bg-[#f5f5f5] flex flex-col">
-        <div className="bg-[#1a2744] px-4 py-2 flex items-center justify-between">
+    <BrowserFrame url="rcsecuritygroup.com.au">
+      <div className="h-full bg-[#0d0d0d] flex flex-col overflow-hidden">
+        {/* Nav */}
+        <div className="bg-[#111] px-3 py-2 flex items-center justify-between border-b border-white/5 flex-shrink-0">
           <div className="flex items-center gap-2">
-            <div className="w-5 h-5 bg-[#FE5C57] rounded" />
-            <div className="space-y-0.5">
-              <div className="w-12 h-1 bg-white/80 rounded" />
-              <div className="w-8 h-0.5 bg-white/40 rounded" />
+            {/* RC shield logo */}
+            <div className="w-7 h-7 relative flex-shrink-0">
+              <div className="w-7 h-7 bg-[#0dcfbf] rounded-sm flex items-center justify-center">
+                <span className="text-[7px] font-black text-black tracking-tighter">RC</span>
+              </div>
+            </div>
+            <div>
+              <div className="text-[8px] font-bold text-white tracking-wider">RC SECURITY</div>
+              <div className="text-[5px] text-[#0dcfbf] tracking-widest">GROUP</div>
             </div>
           </div>
           <div className="flex gap-3">
-            {[1,2,3,4].map(i => <div key={i} className="w-6 h-1 bg-white/30 rounded" />)}
+            {["Home","Services","About","Contact"].map(m => (
+              <span key={m} className="text-[6px] text-white/40">{m}</span>
+            ))}
           </div>
-          <div className="w-14 h-4 bg-[#FE5C57] rounded-full" />
+          <div className="bg-[#0dcfbf] rounded px-2 py-1 text-[6px] font-bold text-black">Free Consultation</div>
         </div>
-        <div className="relative flex-1 bg-gradient-to-br from-[#1a2744] via-[#243058] to-[#1a2744] flex flex-col justify-end pb-3 px-3">
-          <div className="absolute right-0 top-0 bottom-0 w-1/2 opacity-30" style={{background:"repeating-linear-gradient(45deg,transparent,transparent 4px,rgba(255,255,255,0.05) 4px,rgba(255,255,255,0.05) 5px)"}} />
-          <div className="mb-2">
-            <div className="w-20 h-2 bg-white/80 rounded mb-1" />
-            <div className="w-28 h-1.5 bg-white/50 rounded mb-0.5" />
-            <div className="w-24 h-1.5 bg-white/50 rounded mb-2" />
-            <div className="w-12 h-4 bg-[#FE5C57] rounded-full" />
-          </div>
-        </div>
-        <div className="bg-white px-3 py-2 grid grid-cols-3 gap-1.5">
-          {[["🔧","Auto Repair"],["🚗","Car Sales"],["🛡️","Insurance"]].map(([,l],i) => (
-            <div key={i} className="bg-[#f0f2f5] rounded-lg p-1.5 text-center">
-              <div className="w-4 h-4 bg-[#1a2744]/20 rounded mx-auto mb-0.5" />
-              <div className="text-[7px] text-gray-500 font-medium">{l}</div>
-            </div>
-          ))}
-        </div>
-        <div className="bg-white px-3 py-2 flex gap-2">
-          {[1,2].map(i => (
-            <div key={i} className="flex-1 bg-gray-50 border border-gray-100 rounded-xl p-1.5 flex gap-1.5">
-              <div className="w-8 h-8 bg-[#1a2744]/10 rounded-lg flex-shrink-0" />
-              <div className="flex-1">
-                <div className="w-full h-1 bg-gray-200 rounded mb-0.5" />
-                <div className="w-3/4 h-1 bg-gray-100 rounded mb-0.5" />
-                <div className="w-8 h-2.5 bg-[#FE5C57] rounded-full" />
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </BrowserFrame>
-  );
-}
 
-function ConsultancyMockup() {
-  return (
-    <BrowserFrame url="fabconsultants.co.uk">
-      <div className="h-full bg-white flex flex-col">
-        <div className="bg-[#003087] px-3 py-2 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="w-4 h-4 bg-white rounded-sm flex items-center justify-center">
-              <div className="w-2 h-2 bg-[#003087] rounded-sm" />
-            </div>
-            <div className="w-14 h-1.5 bg-white/70 rounded" />
-          </div>
-          <div className="flex gap-2">
-            {[1,2,3,4].map(i => <div key={i} className="w-5 h-1 bg-white/40 rounded" />)}
-          </div>
-          <div className="w-12 h-3.5 bg-[#FFC107] rounded" />
-        </div>
-        <div className="relative bg-gradient-to-r from-[#003087] to-[#0050b3] px-4 py-3 flex items-center gap-2">
-          <div className="flex-1">
-            <div className="w-20 h-2 bg-white/90 rounded mb-1" />
-            <div className="w-28 h-1.5 bg-white/60 rounded mb-0.5" />
-            <div className="w-24 h-1.5 bg-white/60 rounded mb-2" />
-            <div className="flex gap-2">
-              <div className="w-12 h-4 bg-[#FFC107] rounded" />
-              <div className="w-10 h-4 border border-white/40 rounded" />
-            </div>
-          </div>
-          <div className="w-20 h-16 bg-white/10 rounded-xl border border-white/20 flex items-center justify-center">
-            <Monitor className="w-6 h-6 text-white/30" />
-          </div>
-        </div>
-        <div className="flex gap-1 px-2 py-1.5 bg-[#f8f9fa] border-b border-gray-100">
-          {["🇬🇧","🇵🇰","🇦🇪","🇺🇸","🇨🇦"].map((f,i) => <span key={i} className="text-xs">{f}</span>)}
-          <span className="ml-auto text-[8px] text-gray-400">5 Countries</span>
-        </div>
-        <div className="flex-1 px-3 py-2 grid grid-cols-2 gap-2">
-          {[
-            { h: "Why FTB?", lines: 4 },
-            { h: "Testimonials", lines: 3 },
-          ].map((c) => (
-            <div key={c.h} className="bg-gray-50 rounded-lg p-2">
-              <div className="w-12 h-1.5 bg-[#003087]/50 rounded mb-1.5" />
-              {Array.from({ length: c.lines }).map((_,i) => (
-                <div key={i} className="h-0.5 bg-gray-200 rounded mb-0.5" style={{width:`${95 - i * 12}%`}} />
-              ))}
-            </div>
-          ))}
-        </div>
-      </div>
-    </BrowserFrame>
-  );
-}
+        {/* Hero */}
+        <div className="relative flex-1 overflow-hidden">
+          {/* Radial glow */}
+          <div className="absolute inset-0" style={{background:"radial-gradient(ellipse at 60% 40%, rgba(13,207,191,0.12) 0%, transparent 70%)"}} />
+          {/* Pattern overlay */}
+          <div className="absolute inset-0 opacity-5" style={{backgroundImage:"repeating-linear-gradient(45deg,#fff 0,#fff 1px,transparent 0,transparent 50%)",backgroundSize:"8px 8px"}} />
 
-function SaaSMockup() {
-  const bars = [55,72,45,90,68,85,78];
-  return (
-    <BrowserFrame url="vaultline.app/dashboard">
-      <div className="h-full bg-[#0f111a] flex flex-col">
-        <div className="flex h-full">
-          {/* Sidebar */}
-          <div className="w-10 bg-[#1a1d2e] border-r border-white/5 flex flex-col items-center py-2 gap-2">
-            <div className="w-5 h-5 bg-gradient-to-br from-[#FE5C57] to-[#02E5D2] rounded-md" />
-            {[1,2,3,4,5].map(i => <div key={i} className="w-4 h-4 bg-white/5 rounded" />)}
-          </div>
-          {/* Main */}
-          <div className="flex-1 p-2">
-            <div className="grid grid-cols-3 gap-1.5 mb-2">
-              {[
-                { l: "MRR", v: "£48K", c: "text-[#02E5D2]" },
-                { l: "Users", v: "2,341", c: "text-[#FE5C57]" },
-                { l: "Churn", v: "1.2%", c: "text-green-400" },
-              ].map(m => (
-                <div key={m.l} className="bg-white/5 rounded-lg p-1.5">
-                  <div className="text-[7px] text-white/30 mb-0.5">{m.l}</div>
-                  <div className={`text-xs font-bold ${m.c}`}>{m.v}</div>
-                </div>
-              ))}
+          <div className="relative px-4 pt-4 pb-2">
+            {/* Badge */}
+            <div className="flex items-center gap-1.5 mb-2">
+              <div className="w-1 h-3 bg-[#0dcfbf] rounded-full" />
+              <span className="text-[7px] font-bold text-[#0dcfbf] tracking-[0.2em] uppercase">Brisbane's #1 Security Company</span>
             </div>
-            <div className="bg-white/5 rounded-lg p-2 mb-2">
-              <div className="text-[7px] text-white/30 mb-1.5">Revenue — 7 days</div>
-              <div className="flex items-end gap-1 h-10">
-                {bars.map((h,i) => (
-                  <div key={i} className="flex-1 bg-gradient-to-t from-[#02E5D2] to-[#FE5C57] rounded-t opacity-80" style={{height:`${h}%`}} />
-                ))}
-              </div>
+            {/* Hero heading — Bebas Neue-style wide caps */}
+            <div className="mb-3">
+              <div className="text-[11px] font-black text-white tracking-wide uppercase leading-tight">PROTECTING</div>
+              <div className="text-[11px] font-black text-[#0dcfbf] tracking-wide uppercase leading-tight">WHAT MATTERS</div>
+              <div className="text-[11px] font-black text-white tracking-wide uppercase leading-tight">MOST</div>
             </div>
-            <div className="bg-white/5 rounded-lg p-2">
-              <div className="text-[7px] text-white/30 mb-1.5">Recent signups</div>
-              {[1,2,3].map(i => (
-                <div key={i} className="flex items-center gap-1.5 mb-1">
-                  <div className="w-3 h-3 bg-gradient-to-br from-[#FE5C57] to-[#02E5D2] rounded-full" />
-                  <div className="h-0.5 flex-1 bg-white/10 rounded" />
-                  <div className="text-[7px] text-white/30">now</div>
-                </div>
-              ))}
+            <div className="w-40 h-0.5 bg-white/10 rounded mb-2" />
+            <p className="text-[6px] text-white/50 leading-relaxed mb-3 max-w-[160px]">
+              Professional security services for businesses, events, and properties across Brisbane & QLD.
+            </p>
+            <div className="flex items-center gap-2">
+              <div className="bg-[#0dcfbf] rounded px-3 py-1.5 text-[6px] font-bold text-black">Get Free Consultation</div>
+              <div className="border border-white/20 rounded px-2.5 py-1.5 text-[6px] text-white/50">Our Services</div>
             </div>
           </div>
-        </div>
-      </div>
-    </BrowserFrame>
-  );
-}
 
-function SecurityMockup() {
-  return (
-    <BrowserFrame url="rcsecuritygroup.com.au">
-      <div className="h-full bg-[#0a0a0a] flex flex-col">
-        <div className="bg-[#111] px-3 py-2 flex items-center justify-between border-b border-white/5">
-          <div className="flex items-center gap-2">
-            <div className="w-5 h-5 bg-[#02E5D2] rounded-full" />
-            <div className="w-16 h-1.5 bg-white/70 rounded" />
-          </div>
-          <div className="flex gap-2">
-            {[1,2,3,4].map(i => <div key={i} className="w-5 h-1 bg-white/20 rounded" />)}
-          </div>
-          <div className="w-14 h-4 bg-[#02E5D2] rounded text-[7px] text-black font-bold flex items-center justify-center">Get Quote</div>
-        </div>
-        <div className="relative flex-1 bg-gradient-to-b from-[#111] to-[#0a0a0a] overflow-hidden">
-          <div className="absolute inset-0 opacity-10" style={{backgroundImage:"radial-gradient(circle at 50% 50%, #02E5D2 0%, transparent 70%)"}} />
-          <div className="px-4 py-3">
-            <div className="text-[8px] text-[#02E5D2] mb-1 font-bold tracking-widest">#1 SECURITY COMPANY BRISBANE</div>
-            <div className="w-24 h-2 bg-white/80 rounded mb-1" />
-            <div className="w-32 h-1.5 bg-white/50 rounded mb-0.5" />
-            <div className="w-28 h-1.5 bg-white/50 rounded mb-3" />
-            <div className="flex gap-2">
-              <div className="w-14 h-4 bg-[#02E5D2] rounded text-[7px] text-black font-bold flex items-center justify-center">Get Protected</div>
-              <div className="w-12 h-4 border border-white/20 rounded text-[7px] text-white/60 flex items-center justify-center">Learn More</div>
-            </div>
-          </div>
-          <div className="grid grid-cols-3 gap-1.5 px-4 py-2">
-            {[1,2,3].map(i => (
-              <div key={i} className="bg-white/5 border border-white/10 rounded-lg p-2 text-center">
-                <div className="w-4 h-4 bg-[#02E5D2]/20 rounded-full mx-auto mb-1" />
-                <div className="w-8 h-0.5 bg-white/20 mx-auto rounded" />
+          {/* Services strip */}
+          <div className="absolute bottom-0 left-0 right-0 bg-[#111] border-t border-white/5 px-3 py-2 grid grid-cols-4 gap-2">
+            {[
+              { l: "Corporate Security", c: "bg-[#0dcfbf]/15" },
+              { l: "Event Security", c: "bg-[#0dcfbf]/10" },
+              { l: "CCTV & Monitoring", c: "bg-[#0dcfbf]/10" },
+              { l: "Mobile Patrols", c: "bg-[#0dcfbf]/10" },
+            ].map(s => (
+              <div key={s.l} className={`${s.c} border border-[#0dcfbf]/20 rounded-lg p-1.5 text-center`}>
+                <div className="w-3 h-3 bg-[#0dcfbf]/30 rounded-full mx-auto mb-0.5" />
+                <div className="text-[5px] text-white/50 leading-tight">{s.l}</div>
               </div>
             ))}
           </div>
+        </div>
+      </div>
+    </BrowserFrame>
+  );
+}
+
+/* Herbal Shifakhana — herbalshifakhana.com
+   Shopify e-commerce, green/natural theme, product grid */
+function HerbalShifakhanaMockup() {
+  const products = [
+    { name: "Herbal Immunity Boost", price: "Rs 1,800", badge: "Best Seller", badgeClr: "bg-green-600" },
+    { name: "Natural Detox Tea", price: "Rs 1,200", badge: "New", badgeClr: "bg-[#e67e22]" },
+    { name: "Shifakhana Relief Oil", price: "Rs 2,400", badge: "Sale", badgeClr: "bg-red-600" },
+    { name: "Herbal Digestive Mix", price: "Rs 950", badge: null, badgeClr: "" },
+  ];
+  return (
+    <BrowserFrame url="herbalshifakhana.com">
+      <div className="h-full bg-white flex flex-col overflow-hidden">
+        {/* Announcement */}
+        <div className="bg-[#2d6a2d] px-3 py-1 text-center flex-shrink-0">
+          <span className="text-[6px] text-white/90 font-medium">Free shipping on orders over Rs 3,000 — 100% Natural & Authentic</span>
+        </div>
+
+        {/* Nav */}
+        <div className="bg-white border-b border-gray-100 px-3 py-2 flex items-center justify-between flex-shrink-0">
+          <div className="flex items-center gap-1.5">
+            <div className="w-6 h-6 bg-[#2d6a2d] rounded-full flex items-center justify-center flex-shrink-0">
+              <div className="w-3 h-3 text-white text-[6px] font-bold flex items-center justify-center">H</div>
+            </div>
+            <div>
+              <div className="text-[8px] font-bold text-[#2d6a2d]">Herbal Shifakhana</div>
+              <div className="text-[5px] text-gray-400">Pure · Natural · Authentic</div>
+            </div>
+          </div>
+          <div className="flex gap-3">
+            {["Shop","About","Blogs","Contact"].map(m => (
+              <span key={m} className="text-[6px] text-gray-500">{m}</span>
+            ))}
+          </div>
+          <div className="flex gap-1.5 items-center">
+            <div className="w-5 h-5 bg-gray-100 rounded-full" />
+            <div className="bg-[#2d6a2d] rounded-full w-5 h-5 flex items-center justify-center">
+              <span className="text-[5px] text-white font-bold">0</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Hero banner */}
+        <div className="bg-gradient-to-r from-[#1a4d1a] to-[#2d6a2d] px-4 py-3 flex items-center justify-between flex-shrink-0">
+          <div>
+            <div className="text-[7px] text-[#a8e6a8] font-semibold mb-0.5 tracking-wider uppercase">100% Natural Remedies</div>
+            <div className="text-[9px] font-black text-white leading-tight">Pakistan's Trusted</div>
+            <div className="text-[9px] font-black text-[#76c976] leading-tight">Herbal Store</div>
+            <div className="mt-1.5 bg-[#76c976] rounded-full px-2 py-0.5 text-[6px] font-bold text-black inline-block">Shop Now</div>
+          </div>
+          {/* Leaf illustration */}
+          <div className="w-16 h-12 relative">
+            <div className="absolute right-0 top-0 w-10 h-14 rounded-[50%_0_50%_50%] bg-green-400/30 border border-green-400/50 transform rotate-12" />
+            <div className="absolute right-3 top-2 w-7 h-10 rounded-[50%_0_50%_50%] bg-green-500/20 border border-green-500/40 transform rotate-6" />
+          </div>
+        </div>
+
+        {/* Products */}
+        <div className="flex-1 overflow-hidden p-2">
+          <div className="text-[7px] font-bold text-gray-700 mb-1.5">Featured Products</div>
+          <div className="grid grid-cols-4 gap-1.5">
+            {products.map(p => (
+              <div key={p.name} className="bg-[#f8fdf8] border border-green-100 rounded-xl overflow-hidden">
+                <div className="relative bg-gradient-to-b from-[#e8f5e9] to-[#c8e6c9] h-10 flex items-center justify-center">
+                  {p.badge && (
+                    <div className={`absolute top-0.5 left-0.5 ${p.badgeClr} rounded px-0.5 text-[4px] text-white font-bold`}>{p.badge}</div>
+                  )}
+                  <div className="w-6 h-6 rounded-full bg-green-200 border border-green-300" />
+                </div>
+                <div className="p-1">
+                  <div className="text-[5px] text-gray-600 leading-tight mb-0.5 line-clamp-2">{p.name}</div>
+                  <div className="text-[6px] font-bold text-[#2d6a2d]">{p.price}</div>
+                  <div className="mt-0.5 bg-[#2d6a2d] rounded text-[4px] text-white text-center py-0.5">Add to Cart</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Trust bar */}
+        <div className="bg-[#f0f7f0] border-t border-green-100 px-3 py-1.5 grid grid-cols-3 gap-2 flex-shrink-0">
+          {[
+            { l: "Natural Ingredients", v: "100%" },
+            { l: "Happy Customers", v: "50K+" },
+            { l: "Years Trusted", v: "15+" },
+          ].map(s => (
+            <div key={s.l} className="text-center">
+              <div className="text-[8px] font-bold text-[#2d6a2d]">{s.v}</div>
+              <div className="text-[5px] text-gray-500">{s.l}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </BrowserFrame>
+  );
+}
+
+/* Novo Stays — novostays.com
+   React/MUI property booking platform, clean modern UI */
+function NovoStaysMockup() {
+  const properties = [
+    { loc: "Kensington, London", type: "2-Bed Apartment", price: "£2,200/mo", badge: "Featured" },
+    { loc: "Canary Wharf, London", type: "Studio Suite", price: "£1,450/mo", badge: "New" },
+    { loc: "Manchester City Centre", type: "3-Bed House", price: "£1,800/mo", badge: null },
+  ];
+  return (
+    <BrowserFrame url="novostays.com">
+      <div className="h-full bg-[#f9fafb] flex flex-col overflow-hidden">
+        {/* Nav */}
+        <div className="bg-white border-b border-gray-100 px-3 py-2 flex items-center justify-between flex-shrink-0">
+          <div className="flex items-center gap-1.5">
+            <div className="w-5 h-5 bg-gradient-to-br from-[#1a237e] to-[#3949ab] rounded-lg flex items-center justify-center">
+              <span className="text-[5px] font-black text-white">NS</span>
+            </div>
+            <span className="text-[8px] font-bold text-[#1a237e]">NovoStays</span>
+          </div>
+          <div className="flex gap-3">
+            {["Find a Stay","List Property","How it Works","Sign In"].map(m => (
+              <span key={m} className="text-[6px] text-gray-500">{m}</span>
+            ))}
+          </div>
+          <div className="bg-[#1a237e] rounded-full px-2.5 py-1 text-[6px] text-white font-semibold">Get Started</div>
+        </div>
+
+        {/* Hero search area */}
+        <div className="bg-gradient-to-b from-[#1a237e] to-[#283593] px-4 py-3 flex-shrink-0">
+          <div className="text-[8px] font-black text-white mb-0.5">Find Your Perfect Stay</div>
+          <div className="text-[6px] text-white/60 mb-2">Serviced apartments & short-lets across the UK</div>
+          {/* Search bar */}
+          <div className="bg-white rounded-xl shadow-md flex items-center overflow-hidden">
+            <div className="flex-1 px-2 py-1.5 border-r border-gray-100">
+              <div className="text-[5px] text-gray-400 font-semibold mb-0.5">LOCATION</div>
+              <div className="text-[6px] text-gray-600">London, UK</div>
+            </div>
+            <div className="px-2 py-1.5 border-r border-gray-100">
+              <div className="text-[5px] text-gray-400 font-semibold mb-0.5">CHECK-IN</div>
+              <div className="text-[6px] text-gray-600">Jun 15</div>
+            </div>
+            <div className="px-2 py-1.5 border-r border-gray-100">
+              <div className="text-[5px] text-gray-400 font-semibold mb-0.5">CHECK-OUT</div>
+              <div className="text-[6px] text-gray-600">Jun 30</div>
+            </div>
+            <div className="bg-[#1a237e] px-3 py-2 flex-shrink-0 flex items-center gap-1">
+              <span className="text-[6px] text-white font-bold">Search</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Filters row */}
+        <div className="bg-white border-b border-gray-100 px-3 py-1.5 flex items-center gap-2 flex-shrink-0 overflow-hidden">
+          <span className="text-[6px] text-gray-400 font-semibold">Filters:</span>
+          {["Studio","1-Bed","2-Bed","Pet Friendly","Bills Incl."].map((f,i) => (
+            <span key={f} className={`text-[5px] px-1.5 py-0.5 rounded-full border ${i===0 ? "bg-[#1a237e] text-white border-[#1a237e]" : "text-gray-500 border-gray-200"}`}>{f}</span>
+          ))}
+        </div>
+
+        {/* Property cards */}
+        <div className="flex-1 overflow-hidden p-2">
+          <div className="space-y-1.5">
+            {properties.map(p => (
+              <div key={p.loc} className="bg-white border border-gray-100 rounded-xl flex items-center gap-2 p-1.5 shadow-sm">
+                <div className="w-14 h-10 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg flex-shrink-0 relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-300/50" />
+                  {p.badge && (
+                    <div className="absolute top-0.5 left-0.5 bg-[#1a237e] text-white text-[4px] font-bold px-1 rounded">{p.badge}</div>
+                  )}
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="text-[6px] font-bold text-gray-800 truncate">{p.loc}</div>
+                  <div className="text-[5px] text-gray-500">{p.type}</div>
+                  <div className="flex items-center gap-0.5 mt-0.5">
+                    {[1,2,3,4,5].map(i => <div key={i} className="w-1.5 h-1.5 bg-yellow-400 rounded-sm" />)}
+                  </div>
+                </div>
+                <div className="text-right flex-shrink-0">
+                  <div className="text-[7px] font-bold text-[#1a237e]">{p.price}</div>
+                  <div className="text-[4px] text-gray-400">per month</div>
+                  <div className="mt-0.5 bg-[#1a237e]/10 rounded px-1 py-0.5 text-[4px] text-[#1a237e] font-semibold">View</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Stats */}
+        <div className="bg-white border-t border-gray-100 px-3 py-1.5 grid grid-cols-3 gap-2 flex-shrink-0">
+          {[["500+","Properties"],["4.9★","Rating"],["UK Wide","Coverage"]].map(([v,l]) => (
+            <div key={l} className="text-center">
+              <div className="text-[7px] font-bold text-[#1a237e]">{v}</div>
+              <div className="text-[5px] text-gray-400">{l}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </BrowserFrame>
+  );
+}
+
+/* QSR Estates — qsrestates.com
+   UK property lettings & management, WordPress/Kadence, "YOUR PROPERTY, OUR PRIORITY" */
+function QSREstatesMockup() {
+  return (
+    <BrowserFrame url="qsrestates.com">
+      <div className="h-full bg-white flex flex-col overflow-hidden">
+        {/* Nav */}
+        <div className="bg-white border-b border-gray-100 px-3 py-2 flex items-center justify-between flex-shrink-0 shadow-sm">
+          <div className="flex items-center gap-1.5">
+            {/* QSR key/house logo */}
+            <div className="w-6 h-6 bg-[#1c3557] rounded-lg flex items-center justify-center flex-shrink-0">
+              <span className="text-[5px] font-black text-white">QSR</span>
+            </div>
+            <div>
+              <div className="text-[7px] font-bold text-[#1c3557]">QSR Estates</div>
+              <div className="text-[5px] text-gray-400">Property Specialists</div>
+            </div>
+          </div>
+          <div className="flex gap-3">
+            {["Lettings","Sales","Management","Contact"].map(m => (
+              <span key={m} className="text-[6px] text-gray-500 font-medium">{m}</span>
+            ))}
+          </div>
+          <div className="bg-[#c9a84c] rounded px-2 py-1 text-[6px] font-bold text-white">Book Valuation</div>
+        </div>
+
+        {/* Hero */}
+        <div className="relative flex-shrink-0" style={{background:"linear-gradient(135deg,#1c3557 0%,#254870 100%)"}}>
+          <div className="absolute inset-0 opacity-10" style={{backgroundImage:"url(\"data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23fff' fill-opacity='0.4'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E\")"}} />
+          <div className="relative px-4 py-4 text-center">
+            <div className="text-[7px] text-[#c9a84c] font-bold tracking-[0.25em] uppercase mb-1">UK Property Specialists</div>
+            <div className="text-[11px] font-black text-white tracking-wide uppercase leading-tight">YOUR PROPERTY,</div>
+            <div className="text-[11px] font-black text-[#c9a84c] tracking-wide uppercase leading-tight">OUR PRIORITY</div>
+            <div className="text-[6px] text-white/60 mt-1.5 mb-3 max-w-[200px] mx-auto leading-relaxed">
+              Specialising in lettings, management &amp; investments across the UK
+            </div>
+            <div className="flex items-center justify-center gap-2">
+              <div className="bg-[#c9a84c] rounded px-3 py-1.5 text-[6px] font-bold text-white">Find a Property</div>
+              <div className="border border-white/30 rounded px-2.5 py-1.5 text-[6px] text-white/70">Book Valuation</div>
+            </div>
+          </div>
+        </div>
+
+        {/* Search bar */}
+        <div className="bg-[#f4f0e8] border-b border-[#c9a84c]/20 px-3 py-2 flex items-center gap-2 flex-shrink-0">
+          <div className="flex-1 bg-white border border-gray-200 rounded-lg px-2 py-1 flex items-center gap-1">
+            <div className="w-2 h-2 bg-gray-300 rounded-full flex-shrink-0" />
+            <div className="h-0.5 flex-1 bg-gray-100 rounded" />
+          </div>
+          <div className="bg-white border border-gray-200 rounded-lg px-2 py-1 text-[6px] text-gray-400">Lettings ▾</div>
+          <div className="bg-[#1c3557] rounded-lg px-3 py-1 text-[6px] text-white font-bold">Search</div>
+        </div>
+
+        {/* Featured Properties */}
+        <div className="flex-1 overflow-hidden px-3 py-2">
+          <div className="flex items-center justify-between mb-2">
+            <div className="text-[7px] font-bold text-[#1c3557]">Featured Properties</div>
+            <div className="text-[6px] text-[#c9a84c] font-semibold">View All →</div>
+          </div>
+          <div className="grid grid-cols-3 gap-2">
+            {[
+              { area: "Birmingham", bed: "3 Bed", price: "£1,350 pcm", tag: "TO LET" },
+              { area: "Manchester", bed: "2 Bed", price: "£1,100 pcm", tag: "LET AGREED" },
+              { area: "Leeds", bed: "4 Bed", price: "£1,650 pcm", tag: "TO LET" },
+            ].map(p => (
+              <div key={p.area} className="bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm">
+                <div className="relative h-10 bg-gradient-to-b from-gray-100 to-gray-200">
+                  <div className="absolute top-0.5 left-0.5 bg-[#1c3557] text-white text-[4px] font-bold px-1 py-0.5 rounded">{p.tag}</div>
+                </div>
+                <div className="p-1.5">
+                  <div className="text-[6px] font-bold text-gray-700">{p.area}</div>
+                  <div className="text-[5px] text-gray-400">{p.bed}</div>
+                  <div className="text-[6px] font-bold text-[#c9a84c]">{p.price}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Trust strip */}
+        <div className="bg-[#1c3557] px-3 py-2 grid grid-cols-4 gap-2 flex-shrink-0">
+          {[["200+","Properties"],["10yr","Experience"],["98%","Satisfaction"],["UK","Coverage"]].map(([v,l]) => (
+            <div key={l} className="text-center">
+              <div className="text-[7px] font-bold text-[#c9a84c]">{v}</div>
+              <div className="text-[5px] text-white/40">{l}</div>
+            </div>
+          ))}
         </div>
       </div>
     </BrowserFrame>
@@ -720,12 +894,13 @@ const projects: {
   category: string;
   title: string;
   tags: string[];
+  url?: string;
   MockupComponent: React.ComponentType;
 }[] = [
-  { id: "p1", category: "web", title: "Mallee Auto's", tags: ["Webflow", "CRO"], MockupComponent: AutoMockup },
-  { id: "p2", category: "web", title: "FAB Consultants", tags: ["Framer", "SEO"], MockupComponent: ConsultancyMockup },
-  { id: "p3", category: "web", title: "Vaultline SaaS Platform", tags: ["Bubble", "Xano"], MockupComponent: SaaSMockup },
-  { id: "p4", category: "web", title: "RC Security Group", tags: ["Webflow", "Lead Gen"], MockupComponent: SecurityMockup },
+  { id: "p1", category: "web", title: "RC Security Group", tags: ["Elementor", "Brisbane AU"], url: "https://rcsecuritygroup.com.au", MockupComponent: RCSecurityMockup },
+  { id: "p2", category: "web", title: "Herbal Shifakhana", tags: ["Shopify", "E-Commerce"], url: "https://herbalshifakhana.com", MockupComponent: HerbalShifakhanaMockup },
+  { id: "p3", category: "web", title: "Novo Stays", tags: ["React / MUI", "Property Tech"], url: "https://novostays.com", MockupComponent: NovoStaysMockup },
+  { id: "p4", category: "web", title: "QSR Estates", tags: ["WordPress", "UK Lettings"], url: "https://qsrestates.com", MockupComponent: QSREstatesMockup },
   { id: "p5", category: "app", title: "Fitness Online — Workout App", tags: ["FlutterFlow", "iOS/Android"], MockupComponent: FitnessAppMockup },
   { id: "p6", category: "app", title: "Homegate Swiss Real Estate", tags: ["Glide", "Mobile"], MockupComponent: RealEstateAppMockup },
   { id: "p7", category: "app", title: "Fashion Ecommerce App", tags: ["FlutterFlow", "Payments"], MockupComponent: EcommerceAppMockup },
@@ -824,12 +999,23 @@ export default function Portfolio() {
                       ))}
                     </div>
                   </div>
-                  <Link
-                    href="/contact"
-                    className="flex-shrink-0 btn-gradient px-5 py-2 text-xs font-bold tracking-widest uppercase"
-                  >
-                    Explore
-                  </Link>
+                  {project.url ? (
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-shrink-0 btn-gradient px-5 py-2 text-xs font-bold tracking-widest uppercase inline-flex items-center gap-1.5"
+                    >
+                      Visit Site <ExternalLink className="w-3 h-3" />
+                    </a>
+                  ) : (
+                    <Link
+                      href="/contact"
+                      className="flex-shrink-0 btn-gradient px-5 py-2 text-xs font-bold tracking-widest uppercase"
+                    >
+                      Explore
+                    </Link>
+                  )}
                 </div>
               </motion.div>
             ))}
