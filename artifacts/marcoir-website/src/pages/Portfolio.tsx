@@ -89,10 +89,10 @@ const projects = [
 
 export default function Portfolio() {
   return (
-    <div className="flex flex-col gap-32">
+    <div className="flex flex-col">
       {/* Hero */}
       <motion.section
-        className="relative pt-16 pb-4"
+        className="relative pt-16 pb-24 px-4 md:px-8 max-w-7xl mx-auto w-full"
         initial="hidden"
         animate="visible"
         variants={stagger}
@@ -111,8 +111,8 @@ export default function Portfolio() {
       </motion.section>
 
       {/* Projects */}
-      <div className="flex flex-col gap-20">
-        {projects.map((project, idx) => (
+      <div className="flex flex-col gap-8 px-4 md:px-8 max-w-7xl mx-auto w-full pb-24">
+        {projects.map((project) => (
           <motion.article
             key={project.id}
             className="glass-panel rounded-[3rem] p-10 md:p-16 overflow-hidden relative"
@@ -124,7 +124,6 @@ export default function Portfolio() {
             <div className={`absolute top-0 right-0 w-96 h-96 bg-gradient-to-br ${project.accentColor} rounded-full blur-3xl -z-0 translate-x-1/2 -translate-y-1/2`} />
 
             <div className="relative z-10">
-              {/* Header */}
               <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-6 mb-10">
                 <div>
                   <div className="flex items-center gap-3 mb-4">
@@ -140,17 +139,14 @@ export default function Portfolio() {
                 </div>
               </div>
 
-              {/* Tagline */}
               <motion.p variants={fadeUp} className="text-xl text-[#321A12] font-medium mb-6 italic border-l-4 border-[#FE5C57] pl-6">
                 "{project.tagline}"
               </motion.p>
 
-              {/* Description */}
               <motion.p variants={fadeUp} className="text-[#321A12]/70 leading-relaxed mb-10 max-w-3xl">
                 {project.description}
               </motion.p>
 
-              {/* Grid: Approach + Results */}
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
                 <motion.div variants={fadeUp}>
                   <h3 className="font-bold text-[#321A12] mb-5 text-sm tracking-wider uppercase">Approach</h3>
@@ -172,7 +168,7 @@ export default function Portfolio() {
                           {r.icon}
                         </div>
                         <div>
-                          <div className="text-2xl font-bold text-[#321A12]">{r.metric}</div>
+                          <div className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#FE5C57] to-[#02E5D2]">{r.metric}</div>
                           <div className="text-xs text-[#321A12]/60">{r.label}</div>
                         </div>
                       </div>
@@ -185,23 +181,22 @@ export default function Portfolio() {
         ))}
       </div>
 
-      {/* Instagram CTA */}
-      <motion.section
-        className="glass-panel rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={stagger}
-      >
-        <div className="absolute inset-0 bg-gradient-to-br from-[#FE5C57]/5 via-transparent to-[#02E5D2]/5" />
-        <div className="relative z-10">
-          <motion.span variants={fadeUp} className="text-xs font-bold tracking-[0.25em] uppercase text-[#02E5D2] mb-4 block">
+      {/* Instagram CTA — gradient band */}
+      <div className="-mx-4 md:-mx-8 bg-gradient-to-r from-[#FE5C57] to-[#02E5D2] py-24 px-4 md:px-8">
+        <motion.div
+          className="max-w-3xl mx-auto text-center"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={stagger}
+        >
+          <motion.span variants={fadeUp} className="text-xs font-bold tracking-[0.25em] uppercase text-white/60 mb-4 block">
             Live Portfolio
           </motion.span>
-          <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl font-serif font-bold text-[#321A12] mb-6">
+          <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl font-serif font-bold text-white mb-6">
             See More of Our Work
           </motion.h2>
-          <motion.p variants={fadeUp} className="text-lg text-[#321A12]/70 mb-10 max-w-xl mx-auto">
+          <motion.p variants={fadeUp} className="text-white/80 text-lg mb-10">
             Follow our Instagram for behind-the-scenes content, recent client campaigns, and the latest from the Marcoir team.
           </motion.p>
           <motion.div variants={fadeUp} className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -209,24 +204,24 @@ export default function Portfolio() {
               href="https://www.instagram.com/marcoirenterprises"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-[#FE5C57] to-[#02E5D2] text-white px-10 py-4 rounded-full text-lg font-medium hover:opacity-90 transition-all shadow-xl hover:-translate-y-1"
+              className="inline-flex items-center gap-2 bg-white text-[#321A12] px-10 py-4 rounded-full text-lg font-semibold hover:-translate-y-1 transition-all shadow-2xl"
               data-testid="link-portfolio-instagram"
             >
-              View Live Portfolio on Instagram <ExternalLink className="w-5 h-5" />
+              View on Instagram <ExternalLink className="w-5 h-5" />
             </a>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 border-2 border-[#321A12] text-[#321A12] px-10 py-4 rounded-full text-lg font-medium hover:bg-[#321A12] hover:text-white transition-all"
+              className="inline-flex items-center gap-2 border-2 border-white/60 text-white px-10 py-4 rounded-full text-lg font-medium hover:bg-white/10 transition-all"
               data-testid="link-portfolio-contact"
             >
               Start a Project <ArrowRight className="w-5 h-5" />
             </Link>
           </motion.div>
-          <motion.p variants={fadeUp} className="mt-6 text-sm text-[#321A12]/50">
+          <motion.p variants={fadeUp} className="mt-6 text-sm text-white/50">
             @marcoirenterprises on Instagram
           </motion.p>
-        </div>
-      </motion.section>
+        </motion.div>
+      </div>
     </div>
   );
 }

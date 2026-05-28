@@ -51,10 +51,10 @@ export default function Contact() {
   };
 
   return (
-    <div className="flex flex-col gap-24">
+    <div className="flex flex-col">
       {/* Hero */}
       <motion.section
-        className="relative pt-16 pb-4"
+        className="relative pt-16 pb-24 px-4 md:px-8 max-w-7xl mx-auto w-full"
         initial="hidden"
         animate="visible"
         variants={stagger}
@@ -74,8 +74,8 @@ export default function Contact() {
         </motion.p>
       </motion.section>
 
-      {/* Main Content: Form + Info */}
-      <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
+      {/* Main Content */}
+      <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start pb-24 px-4 md:px-8 max-w-7xl mx-auto w-full">
         {/* Form */}
         <motion.div
           className="lg:col-span-3"
@@ -92,8 +92,8 @@ export default function Contact() {
                 transition={{ duration: 0.5, ease: "easeOut" }}
                 data-testid="text-form-success"
               >
-                <div className="w-20 h-20 bg-[#02E5D2]/10 rounded-full flex items-center justify-center mb-2">
-                  <CheckCircle2 className="w-10 h-10 text-[#02E5D2]" />
+                <div className="w-20 h-20 bg-gradient-to-br from-[#FE5C57] to-[#02E5D2] rounded-full flex items-center justify-center mb-2">
+                  <CheckCircle2 className="w-10 h-10 text-white" />
                 </div>
                 <h2 className="text-3xl font-serif font-bold text-[#321A12]">Message Received</h2>
                 <p className="text-[#321A12]/70 max-w-md">
@@ -101,7 +101,7 @@ export default function Contact() {
                 </p>
                 <button
                   onClick={() => setSubmitted(false)}
-                  className="mt-4 text-sm text-[#FE5C57] font-medium hover:underline"
+                  className="mt-4 btn-gradient px-6 py-2.5 text-sm"
                   data-testid="button-submit-another"
                 >
                   Submit another enquiry
@@ -110,7 +110,6 @@ export default function Contact() {
             ) : (
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-7" data-testid="form-contact">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  {/* Full Name */}
                   <div className="space-y-2">
                     <label htmlFor="fullName" className="text-sm font-semibold text-[#321A12]">
                       Full Name <span className="text-[#FE5C57]">*</span>
@@ -127,7 +126,6 @@ export default function Contact() {
                     )}
                   </div>
 
-                  {/* Company Name */}
                   <div className="space-y-2">
                     <label htmlFor="companyName" className="text-sm font-semibold text-[#321A12]">
                       Company Name <span className="text-[#FE5C57]">*</span>
@@ -145,7 +143,6 @@ export default function Contact() {
                   </div>
                 </div>
 
-                {/* Email */}
                 <div className="space-y-2">
                   <label htmlFor="email" className="text-sm font-semibold text-[#321A12]">
                     Email Address <span className="text-[#FE5C57]">*</span>
@@ -163,7 +160,6 @@ export default function Contact() {
                   )}
                 </div>
 
-                {/* Service of Interest */}
                 <div className="space-y-2">
                   <label htmlFor="service" className="text-sm font-semibold text-[#321A12]">
                     Service of Interest <span className="text-[#FE5C57]">*</span>
@@ -176,8 +172,10 @@ export default function Contact() {
                   >
                     <option value="" disabled>Select a service...</option>
                     <option value="video-strategy">Video Strategy & Content</option>
+                    <option value="digital-marketing">Digital Marketing (SEO & Paid Ads)</option>
                     <option value="saas-web">SaaS & Web Apps</option>
                     <option value="ai-voice">AI Voice Agents</option>
+                    <option value="mobile-app">Mobile App Development</option>
                     <option value="full-automation">Full Automation Suite</option>
                   </select>
                   {errors.service && (
@@ -185,7 +183,6 @@ export default function Contact() {
                   )}
                 </div>
 
-                {/* Budget Bracket */}
                 <div className="space-y-2">
                   <label htmlFor="budget" className="text-sm font-semibold text-[#321A12]">
                     Project Budget Bracket <span className="text-[#FE5C57]">*</span>
@@ -210,7 +207,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-[#FE5C57] hover:bg-[#FE5C57]/90 text-white py-4 rounded-xl font-semibold text-lg transition-all shadow-lg shadow-[#FE5C57]/20 hover:-translate-y-0.5 disabled:opacity-60 disabled:cursor-not-allowed disabled:transform-none"
+                  className="w-full btn-gradient py-4 rounded-xl text-lg disabled:opacity-60 disabled:cursor-not-allowed disabled:transform-none"
                   data-testid="button-submit"
                 >
                   {isSubmitting ? "Sending..." : "Submit Enquiry"}
@@ -231,8 +228,8 @@ export default function Contact() {
           variants={stagger}
         >
           <motion.div variants={fadeUp} className="glass-card p-8 rounded-3xl">
-            <div className="w-10 h-10 bg-[#FE5C57]/10 rounded-xl flex items-center justify-center mb-5">
-              <MapPin className="w-5 h-5 text-[#FE5C57]" />
+            <div className="w-10 h-10 bg-gradient-to-br from-[#FE5C57] to-[#02E5D2] rounded-xl flex items-center justify-center mb-5">
+              <MapPin className="w-5 h-5 text-white" />
             </div>
             <h3 className="font-bold text-[#321A12] mb-2">Headquarters</h3>
             <p className="text-[#321A12]/70 text-sm leading-relaxed">
@@ -242,8 +239,8 @@ export default function Contact() {
           </motion.div>
 
           <motion.div variants={fadeUp} className="glass-card p-8 rounded-3xl">
-            <div className="w-10 h-10 bg-[#02E5D2]/10 rounded-xl flex items-center justify-center mb-5">
-              <Mail className="w-5 h-5 text-[#02E5D2]" />
+            <div className="w-10 h-10 bg-gradient-to-br from-[#FE5C57] to-[#02E5D2] rounded-xl flex items-center justify-center mb-5">
+              <Mail className="w-5 h-5 text-white" />
             </div>
             <h3 className="font-bold text-[#321A12] mb-2">Social</h3>
             <a
@@ -258,8 +255,8 @@ export default function Contact() {
           </motion.div>
 
           <motion.div variants={fadeUp} className="glass-card p-8 rounded-3xl">
-            <div className="w-10 h-10 bg-[#321A12]/5 rounded-xl flex items-center justify-center mb-5">
-              <Globe className="w-5 h-5 text-[#321A12]" />
+            <div className="w-10 h-10 bg-gradient-to-br from-[#FE5C57] to-[#02E5D2] rounded-xl flex items-center justify-center mb-5">
+              <Globe className="w-5 h-5 text-white" />
             </div>
             <h3 className="font-bold text-[#321A12] mb-3">Typical Response Time</h3>
             <p className="text-[#321A12]/70 text-sm leading-relaxed">
@@ -276,7 +273,7 @@ export default function Contact() {
                 "30-minute strategy session — no sales pitch, just clarity",
               ].map((step, i) => (
                 <li key={i} className="flex items-start gap-3 text-sm text-[#321A12]/70">
-                  <span className="w-6 h-6 rounded-full bg-[#FE5C57] text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">
+                  <span className="w-6 h-6 rounded-full bg-gradient-to-r from-[#FE5C57] to-[#02E5D2] text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">
                     {i + 1}
                   </span>
                   {step}

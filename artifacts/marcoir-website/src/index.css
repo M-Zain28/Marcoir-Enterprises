@@ -139,3 +139,7 @@
 .glass-card {
   @apply backdrop-blur-md bg-white/10 border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-300;
 }
+
+.btn-gradient {
+  @apply inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#FE5C57] to-[#02E5D2] text-white font-medium rounded-full hover:opacity-90 transition-all shadow-xl hover:-translate-y-0.5 active:translate-y-0;
+}
