@@ -2,9 +2,10 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import ROICalculator from "@/components/ROICalculator";
 import ClientLogosStrip from "@/components/ClientLogosStrip";
+import Testimonials from "@/components/Testimonials";
 import TypewriterCycler from "@/components/TypewriterCycler";
 import CountUpStat from "@/components/CountUpStat";
-import { Globe, Cpu, BarChart2, ArrowRight } from "lucide-react";
+import { Globe, Cpu, BarChart2, ArrowRight, Video, TrendingUp, Bot, Monitor, Search, Zap, MapPin } from "lucide-react";
 
 const fadeUp = {
   hidden: { y: 30, opacity: 0 },
@@ -232,32 +233,36 @@ export default function Home() {
         >
           {[
             {
-              icon: "🎬",
+              icon: <Video className="w-7 h-7 text-[#321A12]" />,
+              iconBg: "bg-[#321A12]/8",
               title: "Video Strategy & Content",
               desc: "Organic distribution engines and thought-leader video architectures engineered for massive B2B and B2C reach.",
               tags: [{ label: "Strategy", cls: "bg-[#321A12]/5 text-[#321A12]" }, { label: "Editing", cls: "bg-[#321A12]/5 text-[#321A12]" }],
             },
             {
-              icon: "📈",
+              icon: <TrendingUp className="w-7 h-7 text-[#02E5D2]" />,
+              iconBg: "bg-[#02E5D2]/10",
               title: "Digital Marketing",
               desc: "Organic growth through technical SEO and inorganic performance via Google, Meta, and TikTok paid campaigns — managed end-to-end.",
               tags: [{ label: "SEO", cls: "bg-[#02E5D2]/15 text-[#02E5D2]" }, { label: "Google Ads", cls: "bg-[#02E5D2]/15 text-[#02E5D2]" }, { label: "TikTok Ads", cls: "bg-[#02E5D2]/15 text-[#02E5D2]" }],
             },
             {
-              icon: "🤖",
+              icon: <Bot className="w-7 h-7 text-[#FE5C57]" />,
+              iconBg: "bg-[#FE5C57]/10",
               title: "AI Voice Automation",
               desc: "Low-latency conversational AI agents tied to Make/Zapier and your CRM for 24/7 inbound and outbound workflows.",
               tags: [{ label: "Voice AI", cls: "bg-[#FE5C57]/10 text-[#FE5C57]" }, { label: "Automations", cls: "bg-[#FE5C57]/10 text-[#FE5C57]" }],
             },
             {
-              icon: "💻",
+              icon: <Monitor className="w-7 h-7 text-[#321A12]" />,
+              iconBg: "bg-[#321A12]/8",
               title: "No-Code & Web Development",
               desc: "From high-converting marketing sites to advanced SaaS platforms and cross-platform mobile apps — built fast, built to scale.",
               tags: [{ label: "Web Apps", cls: "bg-[#321A12]/5 text-[#321A12]" }, { label: "SaaS", cls: "bg-[#321A12]/5 text-[#321A12]" }, { label: "Mobile", cls: "bg-[#321A12]/5 text-[#321A12]" }],
             },
           ].map((s) => (
             <motion.div key={s.title} variants={fadeUp} className="glass-panel p-10 rounded-3xl hover:scale-[1.01] transition-transform duration-300">
-              <div className="text-3xl mb-5">{s.icon}</div>
+              <div className={`w-14 h-14 ${s.iconBg} rounded-2xl flex items-center justify-center mb-6`}>{s.icon}</div>
               <h3 className="text-2xl font-bold text-[#321A12] mb-3">{s.title}</h3>
               <p className="text-[#321A12]/70 mb-6 leading-relaxed">{s.desc}</p>
               <div className="flex flex-wrap gap-2">
@@ -294,28 +299,32 @@ export default function Home() {
             {[
               {
                 step: "01",
-                icon: "🔍",
+                icon: <Search className="w-6 h-6 text-[#FE5C57]" />,
+                iconBg: "bg-[#FE5C57]/15",
                 title: "Discovery Call",
                 desc: "We learn your business, goals, and current landscape in a focused 30-minute strategy session — no generic forms.",
                 clr: "from-[#FE5C57]/20 to-transparent",
               },
               {
                 step: "02",
-                icon: "🗺️",
+                icon: <MapPin className="w-6 h-6 text-[#02E5D2]" />,
+                iconBg: "bg-[#02E5D2]/15",
                 title: "Strategy Blueprint",
                 desc: "We deliver a custom roadmap: which channels, which content, which systems — and why. Before a single penny is spent.",
                 clr: "from-[#02E5D2]/20 to-transparent",
               },
               {
                 step: "03",
-                icon: "⚡",
+                icon: <Zap className="w-6 h-6 text-[#FE5C57]" />,
+                iconBg: "bg-[#FE5C57]/15",
                 title: "Execution Sprint",
                 desc: "Our team launches across your agreed disciplines in parallel. Fast, precise, with zero handoff delays or outsourcing.",
                 clr: "from-[#FE5C57]/20 to-transparent",
               },
               {
                 step: "04",
-                icon: "📈",
+                icon: <BarChart2 className="w-6 h-6 text-[#02E5D2]" />,
+                iconBg: "bg-[#02E5D2]/15",
                 title: "Measure & Scale",
                 desc: "Monthly reporting, live dashboards, and continuous optimisation. What works gets doubled. What doesn't gets cut.",
                 clr: "from-[#02E5D2]/20 to-transparent",
@@ -329,7 +338,7 @@ export default function Home() {
                 <div className="absolute -top-4 left-8 bg-[#321A12] border border-white/20 rounded-full px-3 py-1">
                   <span className="text-xs font-bold text-white/40 font-mono">{step.step}</span>
                 </div>
-                <div className="text-3xl mb-5 mt-2">{step.icon}</div>
+                <div className={`w-12 h-12 ${step.iconBg} rounded-2xl flex items-center justify-center mb-5 mt-2`}>{step.icon}</div>
                 <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#02E5D2] transition-colors">{step.title}</h3>
                 <p className="text-white/50 text-sm leading-relaxed">{step.desc}</p>
               </motion.div>
@@ -347,6 +356,9 @@ export default function Home() {
       <section className="py-12 px-6 md:px-16 max-w-7xl mx-auto w-full">
         <ROICalculator />
       </section>
+
+      {/* ── Testimonials ─────────────────────────────────────── */}
+      <Testimonials />
 
       {/* ── Bottom CTA band ──────────────────────────────────── */}
       <div className="w-full bg-gradient-to-r from-[#FE5C57] to-[#02E5D2] py-24 px-6">
