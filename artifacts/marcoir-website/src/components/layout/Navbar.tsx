@@ -26,12 +26,16 @@ export default function Navbar() {
       <div
         className={`w-full max-w-5xl rounded-2xl transition-all duration-300 ${
           scrolled
-            ? "backdrop-blur-xl bg-white/30 border border-white/40 shadow-2xl py-3"
-            : "backdrop-blur-md bg-white/10 border border-white/20 shadow-xl py-4"
+            ? "backdrop-blur-xl bg-white/30 border border-white/40 shadow-2xl py-2"
+            : "backdrop-blur-md bg-white/10 border border-white/20 shadow-xl py-3"
         } px-6 flex items-center justify-between`}
       >
-        <Link href="/" className="text-2xl font-bold font-serif text-[#321A12] tracking-wider" data-testid="link-logo">
-          MARCOIR
+        <Link href="/" className="flex items-center" data-testid="link-logo">
+          <img
+            src="/marcoir-logo.jpg"
+            alt="Marcoir Enterprises"
+            className="h-10 w-auto object-contain"
+          />
         </Link>
 
         <nav className="hidden md:flex items-center gap-8">

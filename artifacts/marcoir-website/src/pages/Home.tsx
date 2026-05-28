@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import ROICalculator from "@/components/ROICalculator";
-import MarqueeTicker from "@/components/MarqueeTicker";
+import ClientLogosStrip from "@/components/ClientLogosStrip";
 import TypewriterCycler from "@/components/TypewriterCycler";
 import CountUpStat from "@/components/CountUpStat";
 import { Globe, Cpu, BarChart2, ArrowRight } from "lucide-react";
@@ -100,8 +100,8 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* ── Marquee ──────────────────────────────────────────── */}
-      <MarqueeTicker />
+      {/* ── Client Logos ─────────────────────────────────────── */}
+      <ClientLogosStrip />
 
       {/* ── Stats ────────────────────────────────────────────── */}
       <section className="py-20 px-6 md:px-16 max-w-7xl mx-auto w-full">
@@ -269,6 +269,79 @@ export default function Home() {
           ))}
         </motion.div>
       </section>
+
+      {/* ── Our Process ──────────────────────────────────────── */}
+      <div className="w-full bg-[#321A12] py-24 px-6 md:px-16">
+        <motion.div
+          className="max-w-7xl mx-auto"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={stagger}
+        >
+          <motion.div variants={fadeUp} className="text-center mb-16">
+            <span className="text-xs font-bold tracking-[0.25em] uppercase text-[#02E5D2] mb-3 block">How We Work</span>
+            <h2 className="text-4xl md:text-6xl font-serif font-bold text-white mb-4 leading-tight">
+              Our Process
+            </h2>
+            <p className="text-white/60 text-lg max-w-xl mx-auto">
+              From first call to delivered results — a clear, proven four-step framework that every Marcoir engagement follows.
+            </p>
+          </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+            {/* connector line */}
+            <div className="hidden lg:block absolute top-12 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-[#FE5C57]/40 via-[#02E5D2]/40 to-[#FE5C57]/40" />
+            {[
+              {
+                step: "01",
+                icon: "🔍",
+                title: "Discovery Call",
+                desc: "We learn your business, goals, and current landscape in a focused 30-minute strategy session — no generic forms.",
+                clr: "from-[#FE5C57]/20 to-transparent",
+              },
+              {
+                step: "02",
+                icon: "🗺️",
+                title: "Strategy Blueprint",
+                desc: "We deliver a custom roadmap: which channels, which content, which systems — and why. Before a single penny is spent.",
+                clr: "from-[#02E5D2]/20 to-transparent",
+              },
+              {
+                step: "03",
+                icon: "⚡",
+                title: "Execution Sprint",
+                desc: "Our team launches across your agreed disciplines in parallel. Fast, precise, with zero handoff delays or outsourcing.",
+                clr: "from-[#FE5C57]/20 to-transparent",
+              },
+              {
+                step: "04",
+                icon: "📈",
+                title: "Measure & Scale",
+                desc: "Monthly reporting, live dashboards, and continuous optimisation. What works gets doubled. What doesn't gets cut.",
+                clr: "from-[#02E5D2]/20 to-transparent",
+              },
+            ].map((step) => (
+              <motion.div
+                key={step.step}
+                variants={fadeUp}
+                className={`relative bg-gradient-to-b ${step.clr} border border-white/10 rounded-3xl p-8 hover:border-white/20 transition-all duration-300 group`}
+              >
+                <div className="absolute -top-4 left-8 bg-[#321A12] border border-white/20 rounded-full px-3 py-1">
+                  <span className="text-xs font-bold text-white/40 font-mono">{step.step}</span>
+                </div>
+                <div className="text-3xl mb-5 mt-2">{step.icon}</div>
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#02E5D2] transition-colors">{step.title}</h3>
+                <p className="text-white/50 text-sm leading-relaxed">{step.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+          <motion.div variants={fadeUp} className="text-center mt-14">
+            <Link href="/contact" className="btn-gradient px-10 py-4 text-lg" data-testid="link-process-cta">
+              Start with a Discovery Call <ArrowRight className="w-5 h-5" />
+            </Link>
+          </motion.div>
+        </motion.div>
+      </div>
 
       {/* ── ROI Calculator ───────────────────────────────────── */}
       <section className="py-12 px-6 md:px-16 max-w-7xl mx-auto w-full">
