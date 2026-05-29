@@ -32,9 +32,9 @@ export default function Navbar() {
       >
         <Link href="/" className="flex items-center" data-testid="link-logo">
           <img
-            src="/marcoir-logo.jpg"
+            src="/marcoir-logo-new.png"
             alt="Marcoir Enterprises"
-            className="h-10 w-auto object-contain"
+            className="h-12 w-auto object-contain"
           />
         </Link>
 

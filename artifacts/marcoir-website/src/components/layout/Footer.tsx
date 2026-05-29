@@ -81,7 +81,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
         <div className="col-span-1 md:col-span-2">
           <img
-            src="/marcoir-logo.jpg"
+            src="/marcoir-logo-new.png"
             alt="Marcoir Enterprises"
             className="h-14 w-auto object-contain mb-6 brightness-0 invert"
           />
