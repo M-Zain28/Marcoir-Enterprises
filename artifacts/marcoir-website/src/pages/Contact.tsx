@@ -204,9 +204,9 @@ export default function Contact() {
     <div className="flex flex-col">
 
       {/* ── HERO ── */}
-      <div className="w-full bg-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-[500px] h-[400px] bg-[#02E5D2]/10 rounded-full blur-3xl -z-10" />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[300px] bg-[#FE5C57]/8 rounded-full blur-3xl -z-10" />
+      <div className="w-full relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-[600px] h-[500px] bg-[#02E5D2]/10 rounded-full blur-3xl" />
+        <div className="absolute top-0 left-0 w-[400px] h-[350px] bg-[#FE5C57]/8 rounded-full blur-3xl" />
 
         <motion.div
           className="relative max-w-7xl mx-auto px-6 md:px-16 pt-16 pb-20 flex flex-col items-center text-center"
@@ -214,12 +214,6 @@ export default function Contact() {
           animate="visible"
           variants={stagger}
         >
-          <motion.img
-            variants={fadeUp}
-            src="/marcoir-logo-new.png"
-            alt="Marcoir Enterprises"
-            className="h-16 md:h-20 w-auto object-contain mb-8"
-          />
           <motion.span variants={fadeUp} className="text-xs font-bold tracking-[0.3em] uppercase text-[#FE5C57] mb-4 block">
             Get in Touch
           </motion.span>
