@@ -434,23 +434,6 @@ export default function Contact() {
             </ol>
           </motion.div>
 
-          <motion.div variants={fadeUp} className="glass-card p-7 rounded-3xl">
-            <h3 className="font-bold text-[#321A12] mb-4">Find us on</h3>
-            <div className="flex flex-wrap gap-2.5">
-              {socials.map((s) => (
-                <a
-                  key={s.name}
-                  href={s.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  title={s.name}
-                  className="w-9 h-9 rounded-full bg-[#321A12]/8 hover:bg-gradient-to-br hover:from-[#FE5C57] hover:to-[#02E5D2] text-[#321A12]/60 hover:text-white flex items-center justify-center transition-all duration-300 hover:scale-110"
-                >
-                  {s.icon}
-                </a>
-              ))}
-            </div>
-          </motion.div>
         </motion.div>
       </div>
 
