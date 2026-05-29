@@ -895,12 +895,15 @@ const projects: {
   title: string;
   tags: string[];
   url?: string;
-  MockupComponent: React.ComponentType;
+  image?: string;
+  MockupComponent?: React.ComponentType;
 }[] = [
-  { id: "p1", category: "web", title: "RC Security Group", tags: ["Elementor", "Brisbane AU"], url: "https://rcsecuritygroup.com.au", MockupComponent: RCSecurityMockup },
-  { id: "p2", category: "web", title: "Herbal Shifakhana", tags: ["Shopify", "E-Commerce"], url: "https://herbalshifakhana.com", MockupComponent: HerbalShifakhanaMockup },
-  { id: "p3", category: "web", title: "Novo Stays", tags: ["React / MUI", "Property Tech"], url: "https://novostays.com", MockupComponent: NovoStaysMockup },
-  { id: "p4", category: "web", title: "QSR Estates", tags: ["WordPress", "UK Lettings"], url: "https://qsrestates.com", MockupComponent: QSREstatesMockup },
+  { id: "p1", category: "web", title: "Herbal Shifakhana", tags: ["Shopify", "E-Commerce", "Pakistan"], url: "https://herbalshifakhana.com", image: "/portfolio/herbal-shifakhana.png" },
+  { id: "p2", category: "web", title: "Novo Stays", tags: ["Squarespace", "Property Tech", "UK"], url: "https://www.novostays.com", image: "/portfolio/novo-stays.png" },
+  { id: "p3", category: "web", title: "QSR Estates", tags: ["WordPress", "UK Property Lettings"], url: "https://qsrestates.com", image: "/portfolio/qsr-estates.png" },
+  { id: "p4", category: "web", title: "Exclusive Strata Valuers", tags: ["WordPress", "Australia", "Property"], url: "https://exclusivestratavaluers.com.au", image: "/portfolio/exclusive-strata.png" },
+  { id: "p5-2", category: "web", title: "SMSF Property Valuers", tags: ["WordPress", "Australia", "Valuation"], url: "https://smsfpropertyvaluers.com.au", image: "/portfolio/smsf-valuers.png" },
+  { id: "p5-3", category: "web", title: "Easement Valuation Specialists", tags: ["WordPress", "Australia", "Legal"], url: "https://easementvaluations.com.au", image: "/portfolio/easement-valuations.png" },
   { id: "p5", category: "app", title: "Fitness Online — Workout App", tags: ["FlutterFlow", "iOS/Android"], MockupComponent: FitnessAppMockup },
   { id: "p6", category: "app", title: "Homegate Swiss Real Estate", tags: ["Glide", "Mobile"], MockupComponent: RealEstateAppMockup },
   { id: "p7", category: "app", title: "Fashion Ecommerce App", tags: ["FlutterFlow", "Payments"], MockupComponent: EcommerceAppMockup },
@@ -982,10 +985,21 @@ export default function Portfolio() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4 }}
               >
-                {/* Mockup area */}
-                <div className="p-5 bg-gradient-to-br from-[#f5f5f5] to-[#ebebeb] group-hover:from-[#f0f0f0] group-hover:to-[#e5e5e5] transition-all duration-300">
-                  <project.MockupComponent />
-                </div>
+                {/* Mockup / screenshot area */}
+                {project.image ? (
+                  <div className="relative overflow-hidden bg-gradient-to-br from-[#f0f0f0] to-[#e8e8e8] flex items-center justify-center">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full object-contain object-center transition-transform duration-500 group-hover:scale-[1.02]"
+                      style={{ maxHeight: 320 }}
+                    />
+                  </div>
+                ) : project.MockupComponent ? (
+                  <div className="p-5 bg-gradient-to-br from-[#f5f5f5] to-[#ebebeb] group-hover:from-[#f0f0f0] group-hover:to-[#e5e5e5] transition-all duration-300">
+                    <project.MockupComponent />
+                  </div>
+                ) : null}
 
                 {/* Card footer */}
                 <div className="px-6 py-5 flex items-center justify-between bg-white">
