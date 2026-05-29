@@ -203,14 +203,13 @@ export default function Contact() {
   return (
     <div className="flex flex-col">
 
-      {/* ── HERO BAND ── */}
-      <div className="w-full bg-[#321A12] relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#FE5C57]/10 via-transparent to-[#02E5D2]/10" />
-        <div className="absolute top-0 right-0 w-[600px] h-[400px] bg-[#02E5D2]/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[300px] bg-[#FE5C57]/8 rounded-full blur-3xl" />
+      {/* ── HERO ── */}
+      <div className="w-full bg-white relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-[500px] h-[400px] bg-[#02E5D2]/10 rounded-full blur-3xl -z-10" />
+        <div className="absolute bottom-0 left-0 w-[400px] h-[300px] bg-[#FE5C57]/8 rounded-full blur-3xl -z-10" />
 
         <motion.div
-          className="relative max-w-7xl mx-auto px-6 md:px-16 py-16 md:py-24 flex flex-col items-center text-center"
+          className="relative max-w-7xl mx-auto px-6 md:px-16 pt-16 pb-20 flex flex-col items-center text-center"
           initial="hidden"
           animate="visible"
           variants={stagger}
@@ -219,18 +218,18 @@ export default function Contact() {
             variants={fadeUp}
             src="/marcoir-logo-new.png"
             alt="Marcoir Enterprises"
-            className="h-16 md:h-20 w-auto object-contain mb-8 brightness-0 invert"
+            className="h-16 md:h-20 w-auto object-contain mb-8"
           />
-          <motion.span variants={fadeUp} className="text-xs font-bold tracking-[0.3em] uppercase text-[#02E5D2] mb-4 block">
+          <motion.span variants={fadeUp} className="text-xs font-bold tracking-[0.3em] uppercase text-[#FE5C57] mb-4 block">
             Get in Touch
           </motion.span>
-          <motion.h1 variants={fadeUp} className="text-5xl md:text-7xl font-serif font-bold text-white mb-5 leading-tight">
+          <motion.h1 variants={fadeUp} className="text-5xl md:text-7xl font-serif font-bold text-[#321A12] mb-5 leading-tight">
             Start the{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FE5C57] to-[#02E5D2]">
               Conversation
             </span>
           </motion.h1>
-          <motion.p variants={fadeUp} className="text-lg text-white/60 max-w-xl mb-10">
+          <motion.p variants={fadeUp} className="text-lg text-[#321A12]/60 max-w-xl mb-10">
             Tell us what you're building — we'll come back with a clear plan for how Marcoir can accelerate it.
           </motion.p>
 
@@ -243,7 +242,7 @@ export default function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
                 title={s.name}
-                className="w-10 h-10 rounded-full bg-white/10 hover:bg-gradient-to-br hover:from-[#FE5C57] hover:to-[#02E5D2] text-white/70 hover:text-white flex items-center justify-center transition-all duration-300 hover:scale-110"
+                className="w-10 h-10 rounded-full bg-[#321A12]/6 hover:bg-gradient-to-br hover:from-[#FE5C57] hover:to-[#02E5D2] text-[#321A12]/50 hover:text-white flex items-center justify-center transition-all duration-300 hover:scale-110"
               >
                 {s.icon}
               </a>
