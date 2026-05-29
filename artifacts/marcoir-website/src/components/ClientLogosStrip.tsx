@@ -7,11 +7,11 @@ const logos = Array.from({ length: 16 }, (_, i) => ({
 
 function LogoCard({ src, id }: { src: string; id: number }) {
   return (
-    <div className="flex-shrink-0 mx-5 flex items-center justify-center backdrop-blur-md bg-white/40 border border-white/50 rounded-2xl px-8 py-5 shadow-sm hover:bg-white/70 transition-all duration-300 group w-52 h-24">
+    <div className="flex-shrink-0 mx-4 flex items-center justify-center backdrop-blur-md bg-white/40 border border-white/50 rounded-2xl px-5 py-3 shadow-sm hover:bg-white/70 transition-all duration-300 group">
       <img
         src={src}
         alt={`Client logo ${id}`}
-        className="max-h-14 max-w-full w-auto object-contain grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
+        className="h-16 w-40 object-contain grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
       />
     </div>
   );
