@@ -293,9 +293,7 @@ export default function Home() {
               From first call to delivered results — a clear, proven four-step framework that every Marcoir engagement follows.
             </p>
           </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
-            {/* connector line */}
-            <div className="hidden lg:block absolute top-12 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-[#FE5C57]/40 via-[#02E5D2]/40 to-[#FE5C57]/40" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
                 step: "01",
