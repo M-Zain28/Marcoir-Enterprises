@@ -910,8 +910,10 @@ const projects: {
   { id: "p8", category: "marketing", title: "B2B Education — SEO Scale", tags: ["Technical SEO", "Content"], MockupComponent: SEOMockup },
   { id: "p9", category: "marketing", title: "Real Estate Meta Ads", tags: ["Meta", "Lead Gen"], MockupComponent: MetaAdsMockup },
   { id: "p10", category: "marketing", title: "Retail TikTok Campaign", tags: ["TikTok Ads", "6.2× ROAS"], MockupComponent: TikTokAdsMockup },
-  { id: "p11", category: "video", title: "Corporate Brand Film", tags: ["CapCut", "4K"], MockupComponent: BrandFilmMockup },
-  { id: "p12", category: "video", title: "Social Media Content Pack", tags: ["Premiere Pro", "Reels"], MockupComponent: SocialContentMockup },
+  { id: "p11", category: "video", title: "Sahil Adeem Explicated", tags: ["Instagram", "32.8K Followers", "Content Strategy"], url: "https://www.instagram.com/sahilexplicated/", image: "/portfolio/ig-sahilexplicated.png" },
+  { id: "p12", category: "video", title: "Sahil Adeem Explicated 2.0", tags: ["Instagram", "7.5K Followers", "Content Strategy"], url: "https://www.instagram.com/sahilexplicated2.0/", image: "/portfolio/ig-sahilexplicated2.png" },
+  { id: "p13", category: "video", title: "Sahil Adeem Explicated 2.0", tags: ["YouTube", "2.72K Subscribers", "Video Editing"], url: "https://www.youtube.com/@SahilExplicated2.0", image: "/portfolio/yt-sahilexplicated2.png" },
+  { id: "p14", category: "video", title: "Sahil Adeem Explicated", tags: ["YouTube", "19.5K Subscribers", "Video Editing"], url: "https://www.youtube.com/@SahilExplicated", image: "/portfolio/yt-sahilexplicated.png" },
 ];
 
 export default function Portfolio() {
@@ -985,18 +987,17 @@ export default function Portfolio() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4 }}
               >
-                {/* Mockup / screenshot area */}
+                {/* Mockup / screenshot area — always 1:1 */}
                 {project.image ? (
-                  <div className="relative overflow-hidden bg-gradient-to-br from-[#f0f0f0] to-[#e8e8e8] flex items-center justify-center">
+                  <div className="relative aspect-square overflow-hidden bg-gradient-to-br from-[#f0f0f0] to-[#e8e8e8] flex items-center justify-center">
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full object-contain object-center transition-transform duration-500 group-hover:scale-[1.02]"
-                      style={{ maxHeight: 320 }}
+                      className="w-full h-full object-contain object-center transition-transform duration-500 group-hover:scale-[1.02]"
                     />
                   </div>
                 ) : project.MockupComponent ? (
-                  <div className="p-5 bg-gradient-to-br from-[#f5f5f5] to-[#ebebeb] group-hover:from-[#f0f0f0] group-hover:to-[#e5e5e5] transition-all duration-300">
+                  <div className="aspect-square p-5 bg-gradient-to-br from-[#f5f5f5] to-[#ebebeb] group-hover:from-[#f0f0f0] group-hover:to-[#e5e5e5] transition-all duration-300 overflow-hidden flex items-center justify-center">
                     <project.MockupComponent />
                   </div>
                 ) : null}
