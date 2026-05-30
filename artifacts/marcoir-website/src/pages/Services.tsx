@@ -542,7 +542,7 @@ export default function Services() {
     <div className="flex flex-col">
       {/* Page Hero */}
       <motion.section
-        className="relative pt-16 pb-20 text-center px-6 md:px-16 max-w-7xl mx-auto w-full"
+        className="relative pt-16 pb-20 text-center px-6 md:px-16 max-w-7xl mx-auto w-full overflow-hidden"
         initial="hidden"
         animate="visible"
         variants={stagger}
@@ -674,7 +674,7 @@ export default function Services() {
               Start your web project <ArrowRight className="w-4 h-4" />
             </Link>
           </motion.div>
-          <motion.div variants={fadeUp} className="relative py-10 px-6">
+          <motion.div variants={fadeUp} className="relative py-10 px-6 overflow-hidden">
             <WebMockup />
           </motion.div>
         </motion.section>

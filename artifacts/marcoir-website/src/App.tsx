@@ -24,7 +24,7 @@ function ScrollToTop() {
 
 function Router() {
   return (
-    <div className="flex flex-col min-h-[100dvh] w-full">
+    <div className="flex flex-col min-h-[100dvh] w-full overflow-x-hidden">
       <ScrollToTop />
       <Navbar />
       <main className="flex-1 w-full pt-24 overflow-x-hidden">

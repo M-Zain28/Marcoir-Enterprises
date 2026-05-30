@@ -927,7 +927,7 @@ export default function Portfolio() {
     <div className="flex flex-col">
       {/* Hero */}
       <motion.section
-        className="relative pt-16 pb-16 px-6 md:px-16 max-w-7xl mx-auto w-full"
+        className="relative pt-16 pb-16 px-6 md:px-16 max-w-7xl mx-auto w-full overflow-hidden"
         initial="hidden"
         animate="visible"
         variants={stagger}

@@ -48,7 +48,7 @@ export default function About() {
     <div className="flex flex-col">
       {/* Hero */}
       <motion.section
-        className="relative pt-16 pb-24 px-4 md:px-8 max-w-7xl mx-auto w-full"
+        className="relative pt-16 pb-24 px-4 md:px-8 max-w-7xl mx-auto w-full overflow-hidden"
         initial="hidden"
         animate="visible"
         variants={stagger}
