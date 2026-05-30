@@ -67,7 +67,7 @@ export default function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             title="Chat on WhatsApp"
-            className="flex items-center gap-2 backdrop-blur-md bg-white/30 border border-[#321A12] text-[#321A12] px-4 py-2.5 rounded-full text-sm font-medium shadow-sm hover:bg-white/50 transition-all"
+            className="flex items-center gap-2 bg-transparent border border-[#321A12] text-[#321A12] px-4 py-2.5 rounded-full text-sm font-medium transition-all hover:bg-gradient-to-r hover:from-[#FE5C57] hover:to-[#02E5D2] hover:text-white hover:border-transparent hover:-translate-y-0.5 hover:shadow-xl"
             data-testid="link-nav-whatsapp"
           >
             <WhatsAppIcon />
@@ -111,7 +111,7 @@ export default function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setMobileMenuOpen(false)}
-            className="flex items-center justify-center gap-2 backdrop-blur-md bg-white/30 border border-[#321A12] text-[#321A12] px-6 py-3 rounded-full text-base font-medium shadow-sm"
+            className="flex items-center justify-center gap-2 bg-transparent border border-[#321A12] text-[#321A12] px-6 py-3 rounded-full text-base font-medium transition-all hover:bg-gradient-to-r hover:from-[#FE5C57] hover:to-[#02E5D2] hover:text-white hover:border-transparent"
             data-testid="link-mobile-nav-whatsapp"
           >
             <WhatsAppIcon />
