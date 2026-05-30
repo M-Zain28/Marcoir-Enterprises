@@ -952,23 +952,21 @@ export default function Portfolio() {
 
       {/* Category tabs */}
       <div className="px-6 md:px-16 max-w-7xl mx-auto w-full mb-10">
-        <div className="overflow-x-auto pb-1 -mb-1">
-          <div className="flex gap-2 bg-[#321A12]/5 p-1.5 rounded-2xl w-max min-w-full sm:w-auto">
-            {categories.map(({ id, label, Icon }) => (
-              <button
-                key={id}
-                onClick={() => setActiveTab(id)}
-                className={`flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 whitespace-nowrap ${
-                  activeTab === id
-                    ? "bg-gradient-to-r from-[#FE5C57] to-[#02E5D2] text-white shadow-md"
-                    : "text-[#321A12]/60 hover:text-[#321A12] hover:bg-white/60"
-                }`}
-              >
-                <Icon className="w-4 h-4" />
-                {label}
-              </button>
-            ))}
-          </div>
+        <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-2 bg-[#321A12]/5 p-1.5 rounded-2xl">
+          {categories.map(({ id, label, Icon }) => (
+            <button
+              key={id}
+              onClick={() => setActiveTab(id)}
+              className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 ${
+                activeTab === id
+                  ? "bg-gradient-to-r from-[#FE5C57] to-[#02E5D2] text-white shadow-md"
+                  : "text-[#321A12]/60 hover:text-[#321A12] hover:bg-white/60"
+              }`}
+            >
+              <Icon className="w-4 h-4" />
+              {label}
+            </button>
+          ))}
         </div>
       </div>
 

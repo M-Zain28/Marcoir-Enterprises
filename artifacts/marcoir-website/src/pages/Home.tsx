@@ -51,7 +51,7 @@ export default function Home() {
           {/* headline line 1 — static */}
           <motion.h1
             variants={fadeUp}
-            className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-[#321A12] leading-[1.0] tracking-tight mb-2"
+            className="text-6xl sm:text-7xl md:text-8xl font-serif font-bold text-[#321A12] leading-[1.0] tracking-tight mb-2"
           >
             Complexity
           </motion.h1>
@@ -69,7 +69,7 @@ export default function Home() {
               typingSpeed={55}
               deletingSpeed={30}
               pauseMs={2400}
-              className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#FE5C57] to-[#02E5D2] leading-[1.1] tracking-tight"
+              className="text-6xl sm:text-7xl md:text-8xl font-serif font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#FE5C57] to-[#02E5D2] leading-[1.1] tracking-tight"
             />
           </motion.div>
 
@@ -92,7 +92,7 @@ export default function Home() {
             </Link>
             <Link
               href="/services"
-              className="inline-flex items-center gap-2 border-2 border-[#321A12]/20 text-[#321A12] px-10 py-4 rounded-full text-lg font-medium hover:border-[#321A12]/50 transition-all"
+              className="inline-flex items-center justify-center gap-2 border-2 border-[#321A12]/20 text-[#321A12] px-10 py-4 rounded-full text-lg font-medium hover:border-[#321A12]/50 transition-all"
               data-testid="link-hero-services"
             >
               Our Capabilities <ArrowRight className="w-5 h-5" />
