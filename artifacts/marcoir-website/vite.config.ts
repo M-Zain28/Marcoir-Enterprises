@@ -11,9 +11,6 @@ if (!rawPort) {
     "PORT environment variable is required but was not provided.",
   );
 }
-*/
-const port = Number(process.env.PORT || 3000);
-const basePath = process.env.BASE_PATH || "/";
 
 const port = Number(rawPort);
 
@@ -28,6 +25,9 @@ if (!basePath) {
     "BASE_PATH environment variable is required but was not provided.",
   );
 }
+*/
+const port = Number(process.env.PORT || 3000);
+const basePath = process.env.BASE_PATH || "/";
 
 export default defineConfig({
   base: basePath,
@@ -57,10 +57,17 @@ export default defineConfig({
     dedupe: ["react", "react-dom"],
   },
   root: path.resolve(import.meta.dirname),
+  /*
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
   },
+  */
+build: {
+  outDir: "dist",
+  emptyOutDir: true,
+},
+  
   server: {
     port,
     strictPort: true,
