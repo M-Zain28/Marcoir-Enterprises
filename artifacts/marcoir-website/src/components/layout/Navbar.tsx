@@ -67,7 +67,7 @@ export default function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             title="Chat on WhatsApp"
-            className="flex items-center gap-2 bg-[#25D366] text-white px-4 py-2.5 rounded-full text-sm font-semibold hover:bg-[#20b558] transition-colors"
+            className="flex items-center gap-2 backdrop-blur-md bg-white/30 border border-[#321A12] text-[#321A12] px-4 py-2.5 rounded-full text-sm font-medium shadow-sm hover:bg-white/50 transition-all"
             data-testid="link-nav-whatsapp"
           >
             <WhatsAppIcon />
@@ -111,11 +111,11 @@ export default function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setMobileMenuOpen(false)}
-            className="flex items-center justify-center gap-2 bg-[#25D366] text-white px-6 py-3 rounded-2xl text-base font-semibold"
+            className="flex items-center justify-center gap-2 backdrop-blur-md bg-white/30 border border-[#321A12] text-[#321A12] px-6 py-3 rounded-full text-base font-medium shadow-sm"
             data-testid="link-mobile-nav-whatsapp"
           >
             <WhatsAppIcon />
-            WhatsApp: +44 7353 376934
+            +44 7353 376934
           </a>
           <Link
             href="/contact"
