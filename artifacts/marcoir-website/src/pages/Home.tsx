@@ -51,7 +51,7 @@ export default function Home() {
           {/* headline line 1 — static */}
           <motion.h1
             variants={fadeUp}
-            className="text-6xl sm:text-7xl md:text-8xl font-serif font-bold text-[#321A12] leading-[1.0] tracking-tight mb-2"
+            className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-[#321A12] leading-[1.0] tracking-tight mb-2"
           >
             Complexity
           </motion.h1>
@@ -69,7 +69,7 @@ export default function Home() {
               typingSpeed={55}
               deletingSpeed={30}
               pauseMs={2400}
-              className="text-6xl sm:text-7xl md:text-8xl font-serif font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#FE5C57] to-[#02E5D2] leading-[1.1] tracking-tight"
+              className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#FE5C57] to-[#02E5D2] leading-[1.1] tracking-tight"
             />
           </motion.div>
 

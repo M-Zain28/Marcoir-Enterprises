@@ -311,14 +311,14 @@ function WebMockup() {
 function MobileAppMockup() {
   return (
     <motion.div
-      className="flex justify-center gap-6 items-end"
+      className="flex justify-center gap-4 sm:gap-6 items-end"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.7 }}
     >
       {/* Primary phone — full app UI */}
-      <div className="w-56 bg-[#321A12] rounded-[2.5rem] p-3 shadow-2xl relative">
+      <div className="w-44 sm:w-56 bg-[#321A12] rounded-[2.5rem] p-3 shadow-2xl relative">
         {/* Notch */}
         <div className="absolute top-4 left-1/2 -translate-x-1/2 w-20 h-4 bg-[#321A12] rounded-full z-10" />
         <div className="bg-[#fafafa] rounded-[2rem] overflow-hidden h-[460px] flex flex-col">
@@ -394,7 +394,7 @@ function MobileAppMockup() {
 
       {/* Second phone — notification screen */}
       <motion.div
-        className="w-36 bg-[#321A12] rounded-[2rem] p-2 shadow-xl mb-6"
+        className="w-28 sm:w-36 bg-[#321A12] rounded-[2rem] p-2 shadow-xl mb-6"
         animate={{ y: [0, -10, 0] }}
         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
       >
@@ -681,7 +681,7 @@ export default function Services() {
 
         {/* 04 Mobile App */}
         <motion.section
-          className="glass-panel rounded-[3rem] p-12 md:p-16"
+          className="glass-panel rounded-2xl sm:rounded-[3rem] p-6 sm:p-10 md:p-16"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}

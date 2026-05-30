@@ -69,7 +69,7 @@ export default function About() {
       </motion.section>
 
       {/* Mission Statement — dark band */}
-      <div className="-mx-4 md:-mx-8 bg-[#321A12] py-24 px-4 md:px-8">
+      <div className="w-full bg-[#321A12] py-24 px-6 md:px-16">
         <motion.div
           className="max-w-7xl mx-auto"
           initial="hidden"
@@ -186,7 +186,7 @@ export default function About() {
       </div>
 
       {/* CTA gradient band */}
-      <div className="-mx-4 md:-mx-8 bg-gradient-to-r from-[#FE5C57] to-[#02E5D2] py-24 px-4 md:px-8">
+      <div className="w-full bg-gradient-to-r from-[#FE5C57] to-[#02E5D2] py-24 px-6 md:px-16">
         <motion.div
           className="max-w-3xl mx-auto text-center"
           initial="hidden"
